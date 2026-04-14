@@ -161,7 +161,7 @@ export default function About() {
       </section>
 
       <CTABanner
-        heading="Experience the SKY A Difference"
+        heading="Experience the Sky Difference"
         subtext="Join the hundreds of clients who trust us with their most valuable assets and projects."
         ctaText="Get Started Today"
         ctaLink="/contact"

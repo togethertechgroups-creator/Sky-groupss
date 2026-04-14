@@ -25,7 +25,7 @@ export default function Footer() {
               />
               <div className="flex flex-col justify-center">
                 <span className="font-display text-2xl md:text-3xl font-bold leading-none text-gold tracking-wider group-hover:text-white transition-colors duration-300">
-                  SKY GROUPS
+                  Sky Groups
                 </span>
               </div>
             </Link>
