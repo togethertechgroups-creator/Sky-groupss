@@ -4,12 +4,12 @@ import constructionImg from '../../assets/construction.avif';
 
 export default function CivilConstruction() {
   return (
-    <ServicePageLayout 
+    <ServicePageLayout
       serviceId="civil-construction"
       heroImage="https://picsum.photos/1920/1080?random=41"
       introImage={constructionImg}
       introParagraphs={[
-        "Building a home or a commercial complex is a massive undertaking. At SKY A Groups, our Civil Construction division turns blueprints into reality with uncompromising quality and precise engineering.",
+        "Building a home or a commercial complex is a massive undertaking. At Sky Groups, our Civil Construction division turns blueprints into reality with uncompromising quality and precise engineering.",
         "We are equipped with modern machinery, highly skilled labor, and experienced architects to handle residential, commercial, and industrial projects anywhere in Tamil Nadu. We adhere strictly to National Building Codes and local climatic requirements."
       ]}
       processSteps={[

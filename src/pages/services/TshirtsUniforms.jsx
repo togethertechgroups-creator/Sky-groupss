@@ -5,12 +5,12 @@ import tshirtHeroImg from '../../assets/tshirt-hero.webp';
 
 export default function TshirtsUniforms() {
   return (
-    <ServicePageLayout 
+    <ServicePageLayout
       serviceId="tshirts-uniforms"
       heroImage={tshirtHeroImg}
       introImage={uniformImg}
       introParagraphs={[
-        "Brand identity goes beyond a logo. SKY A Groups offers comprehensive corporate apparel and gifting solutions that help your team look professional and feel unified.",
+        "Brand identity goes beyond a logo. Sky Groups offers comprehensive corporate apparel and gifting solutions that help your team look professional and feel unified.",
         "From school uniforms to corporate polos and premium branded gifts, we manage large bulk orders with precision. Our manufacturing partners use high-quality fabrics and advanced printing technology to ensure durability and color retention."
       ]}
       processSteps={[

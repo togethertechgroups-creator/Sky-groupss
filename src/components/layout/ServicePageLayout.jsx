@@ -26,24 +26,24 @@ export default function ServicePageLayout({
 
   return (
     <>
-      <SEOHead 
+      <SEOHead
         title={service.metaTitle}
         description={service.metaDesc}
       />
 
-      <HeroSection 
+      <HeroSection
         heading={service.heroHeading}
         subheading={service.shortDesc}
         bgImage={heroImage || introImage}
         fullHeight={false}
       />
 
-      <BreadCrumb 
+      <BreadCrumb
         crumbs={[
-          { label: 'Home', path: '/' }, 
+          { label: 'Home', path: '/' },
           { label: 'Services', path: '/services' },
           { label: service.name, path: service.slug }
-        ]} 
+        ]}
       />
 
       {/* What We Offer */}
@@ -62,7 +62,7 @@ export default function ServicePageLayout({
                 ))}
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -84,12 +84,12 @@ export default function ServicePageLayout({
       <section className="py-24 bg-off-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading title="Our Process" centered={true} />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 relative">
             <div className="hidden lg:block absolute top-[45px] left-1/8 right-1/8 h-0.5 bg-gold/30 -z-0 translate-x-16 w-[70%]"></div>
-            
+
             {processSteps.map((step, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -108,12 +108,12 @@ export default function ServicePageLayout({
         </div>
       </section>
 
-      {/* Why SKY A Groups (Benefits) */}
+      {/* Why Sky Groups (Benefits) */}
       <section className="py-24 bg-charcoal text-white relative">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #1A1A1A 25%, transparent 25%, transparent 75%, #1A1A1A 75%, #1A1A1A), repeating-linear-gradient(45deg, #1A1A1A 25%, #D4A017 25%, #D4A017 75%, #1A1A1A 75%, #1A1A1A)', backgroundPosition: '0 0, 10px 10px', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeading title="Why Choose Us" centered={true} />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
               { icon: Shield, ...benefits[0] },
@@ -139,16 +139,16 @@ export default function ServicePageLayout({
               <FAQAccordion faqs={serviceFaqs} />
             </div>
             <div>
-              <LeadForm 
-                serviceOptions={[service.name, 'Other']} 
-                formTitle={`Inquire about ${service.name}`} 
+              <LeadForm
+                serviceOptions={[service.name, 'Other']}
+                formTitle={`Inquire about ${service.name}`}
               />
             </div>
           </div>
         </div>
       </section>
 
-      <CTABanner 
+      <CTABanner
         heading="Have Immediate Questions?"
         subtext="Our experts are available around the clock to assist you."
         ctaText="Chat on WhatsApp"

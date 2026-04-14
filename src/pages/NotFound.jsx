@@ -7,15 +7,15 @@ import StarBorder from '../components/ui/StarBorder';
 export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-off-white text-center px-4">
-      <SEOHead title="404 — Page Not Found | SKY A Groups" />
-      
+      <SEOHead title="404 — Page Not Found | Sky Groups" />
+
       <div className="max-w-md w-full animate-in fade-in zoom-in duration-500">
         <h1 className="font-display font-bold text-9xl text-gold mb-2">404</h1>
         <h2 className="font-heading font-bold text-3xl text-charcoal mb-6">Page Not Found</h2>
         <p className="font-body text-grey-text mb-8 text-lg">
           We're sorry, the page you're looking for doesn't exist or has been moved.
         </p>
-        <StarBorder 
+        <StarBorder
           as={Link}
           to="/"
           containerClassName="shadow-xl"

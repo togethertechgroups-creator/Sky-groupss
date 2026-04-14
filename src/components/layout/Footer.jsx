@@ -11,17 +11,17 @@ export default function Footer() {
     <footer className="bg-charcoal text-white relative pt-16 border-t-2 border-gold overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute inset-0 opacity-5 pointer-events-none diagonal-cut-top bg-gold mt-10 h-full"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
+
           {/* Brand Column */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center group gap-3">
-              <img 
-                src={logoImg} 
-                alt="SKY A Groups Logo" 
-                className="h-[50px] md:h-[60px] w-auto transition-transform duration-300 group-hover:scale-[1.02]" 
+              <img
+                src={logoImg}
+                alt="Sky Groups Logo"
+                className="h-[50px] md:h-[60px] w-auto transition-transform duration-300 group-hover:scale-[1.02]"
               />
               <div className="flex flex-col justify-center">
                 <span className="font-display text-2xl md:text-3xl font-bold leading-none text-gold tracking-wider group-hover:text-white transition-colors duration-300">
@@ -40,8 +40,8 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.id}>
-                  <Link 
-                    to={service.slug} 
+                  <Link
+                    to={service.slug}
                     className="text-white/70 hover:text-gold transition-colors font-body text-sm flex items-center group cursor-pointer"
                   >
                     <ArrowRight className="w-3 h-3 mr-2 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all text-gold" />
@@ -98,7 +98,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 py-6 text-center md:flex md:justify-between md:text-left">
           <p className="text-white/50 font-body text-xs">
-            &copy; {currentYear} SKY A Groups. All rights reserved. Managed by S.S. Ponnarasan.
+            &copy; {currentYear} Sky Groups. All rights reserved. Managed by S.S. Ponnarasan.
           </p>
           <div className="mt-4 md:mt-0 space-x-4">
             <span className="text-white/50 hover:text-gold text-xs font-body cursor-pointer">Privacy Policy</span>

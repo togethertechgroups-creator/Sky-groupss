@@ -28,14 +28,14 @@ export default function Home() {
 
   return (
     <>
-      <SEOHead 
-        title="SKY A Groups — Property, Construction, Events & More | Tamil Nadu"
-        description="SKY A Groups by S.S. Ponnarasan offers property development, civil works, car & bike sales, t-shirts, event management, and web design across Tamil Nadu. Call 9941888840."
+      <SEOHead
+        title="Sky Groups — Property, Construction, Events & More | Tamil Nadu"
+        description="Sky Groups by S.S. Ponnarasan offers property development, civil works, car & bike sales, t-shirts, event management, and web design across Tamil Nadu. Call 9941888840."
       />
 
-      <HeroSection 
+      <HeroSection
         heading="Your Trusted Partner for Property, Construction & Business"
-        subheading="SKY A Groups delivers exceptional quality across real estate, civil works, vehicles, branding, events, and digital — all under one trusted name."
+        subheading="Sky Groups delivers exceptional quality across real estate, civil works, vehicles, branding, events, and digital — all under one trusted name."
         bgImage={homeHeroImg}
         mainCtaText="Explore Services"
         mainCtaLink="/services"
@@ -48,7 +48,7 @@ export default function Home() {
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -56,7 +56,7 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-square bg-gray-200 relative overflow-hidden rounded-sm">
-                <img src={legacyImg} alt="SKY A Groups Excellence" className="object-cover w-full h-full" />
+                <img src={legacyImg} alt="Sky Groups Excellence" className="object-cover w-full h-full" />
                 <div className="absolute inset-0 bg-gold/10"></div>
               </div>
               <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-charcoal text-gold flex flex-col justify-center items-center rounded-sm shadow-2xl p-6 hidden md:flex border-t-4 border-gold">
@@ -64,7 +64,7 @@ export default function Home() {
                 <span className="font-label text-xs uppercase tracking-widest text-center">Years of Trust</span>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -74,7 +74,7 @@ export default function Home() {
               <h2 className="font-display font-bold text-4xl mb-6 text-charcoal">A Legacy of Excellence in Tamil Nadu</h2>
               <div className="h-0.5 w-16 bg-gold mb-8"></div>
               <p className="font-body text-grey-text text-lg leading-relaxed mb-6">
-                Founded by S.S. Ponnarasan, SKY A Groups has grown into a versatile powerhouse supporting individuals and businesses across Tamil Nadu. We don't just provide services; we build long-term relationships through unwavering integrity.
+                Founded by S.S. Ponnarasan, Sky Groups has grown into a versatile powerhouse supporting individuals and businesses across Tamil Nadu. We don't just provide services; we build long-term relationships through unwavering integrity.
               </p>
               <p className="font-body text-grey-text text-lg leading-relaxed mb-12">
                 Whether you're investing in property, constructing a home, buying a vehicle, or scaling your digital presence, we deliver premium solutions tailored to your success.
@@ -93,34 +93,34 @@ export default function Home() {
       {/* Services Grid */}
       <section className="py-24 bg-off-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading 
-            title="Our Premium Services" 
+          <SectionHeading
+            title="Our Premium Services"
             subtitle="Explore our diverse, high-quality offerings designed to meet all your personal and corporate needs."
             centered={true}
           />
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={{
               hidden: { opacity: 0 },
-              visible: { 
+              visible: {
                 opacity: 1,
                 transition: { staggerChildren: 0.1 }
               }
             }}
           >
             {services.map((service) => (
-              <motion.div 
+              <motion.div
                 key={service.id}
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0 }
                 }}
               >
-                <ServiceCard 
+                <ServiceCard
                   icon={service.icon}
                   name={service.name}
                   shortDesc={service.shortDesc}
@@ -136,18 +136,18 @@ export default function Home() {
       <section className="py-24 bg-charcoal text-white relative diagonal-cut-top diagonal-cut-bottom my-12">
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(#D4A017 1px, transparent 1px), linear-gradient(90deg, #D4A017 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <SectionHeading 
-            title="Why Choose SKY A Groups" 
+          <SectionHeading
+            title="Why Choose Sky Groups"
             centered={true}
           />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
             {[
               { icon: Shield, title: 'Unwavering Trust', desc: 'Every transaction is backed by complete transparency, legal clarity, and ethical business practices.' },
               { icon: Star, title: 'Premium Quality', desc: 'From construction materials to web code, we never compromise on delivering the highest grade of excellence.' },
               { icon: Heart, title: 'Client First', desc: 'We prioritize your vision. S.S. Ponnarasan ensures personal attention is given to every major project.' }
             ].map((pillar, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -169,8 +169,8 @@ export default function Home() {
       {/* Testimonials */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading 
-            title="Client Success Stories" 
+          <SectionHeading
+            title="Client Success Stories"
             centered={true}
           />
 
@@ -178,8 +178,8 @@ export default function Home() {
             <div className="absolute top-8 left-8 text-gold opacity-20">
               <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" /></svg>
             </div>
-            
-            <motion.div 
+
+            <motion.div
               key={currentTestimonial}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -199,8 +199,8 @@ export default function Home() {
 
             <div className="flex justify-center gap-2 mt-10">
               {testimonials.map((_, idx) => (
-                <button 
-                  key={idx} 
+                <button
+                  key={idx}
                   onClick={() => setCurrentTestimonial(idx)}
                   className={`w-3 h-3 rounded-full transition-all ${idx === currentTestimonial ? 'bg-gold w-8' : 'bg-border'}`}
                   aria-label={`Go to testimonial ${idx + 1}`}
@@ -215,8 +215,8 @@ export default function Home() {
       <section className="py-24 bg-off-white border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
-            <SectionHeading 
-              title="Latest Insights" 
+            <SectionHeading
+              title="Latest Insights"
               subtitle="Expert advice on property, business, and events."
             />
             <Link to="/blog" className="hidden md:block font-label text-gold hover:text-orange uppercase tracking-widest text-sm font-semibold mb-12">
@@ -226,7 +226,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {recentPosts.map((post, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -259,9 +259,9 @@ export default function Home() {
         </div>
       </section>
 
-      <CTABanner 
+      <CTABanner
         heading="Ready to Work With Us?"
-        subtext="Contact SKY A Groups today to discuss your next big project. Serving with pride across Tamil Nadu."
+        subtext="Contact Sky Groups today to discuss your next big project. Serving with pride across Tamil Nadu."
         ctaText="Get a Free Quote"
         ctaLink="/contact"
       />

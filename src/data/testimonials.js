@@ -3,7 +3,7 @@ export const testimonials = [
     id: 1,
     name: 'Rajesh Kumar',
     service: 'Property Development',
-    quote: 'SKY A Groups helped us locate the perfect commercial space in OMR, Chennai. Their transparent paperwork and fast processing were incredible.',
+    quote: 'Sky Groups helped us locate the perfect commercial space in OMR, Chennai. Their transparent paperwork and fast processing were incredible.',
     location: 'Chennai, TN'
   },
   {

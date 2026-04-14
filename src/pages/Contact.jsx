@@ -8,13 +8,13 @@ import { Phone, Mail, MessageCircle, Clock, MapPin } from 'lucide-react';
 export default function Contact() {
   return (
     <>
-      <SEOHead 
-        title="Contact SKY A Groups — Call or WhatsApp 9941888840"
-        description="Contact SKY A Groups. Call or WhatsApp 9941888840 or email ponskygroups@gmail.com for property, construction, events, and more."
+      <SEOHead
+        title="Contact Sky Groups — Call or WhatsApp 9941888840"
+        description="Contact Sky Groups. Call or WhatsApp 9941888840 or email ponskygroups@gmail.com for property, construction, events, and more."
       />
 
-      <HeroSection 
-        heading="Get In Touch With SKY A Groups"
+      <HeroSection
+        heading="Get In Touch With Sky Groups"
         subheading="We are here to help you build, grow, and manage your business. Reach out to us for any inquiries."
         bgImage="https://picsum.photos/1920/1080?random=30"
         fullHeight={false}
@@ -25,7 +25,7 @@ export default function Contact() {
       <section className="py-20 bg-off-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
+
             {/* Left: Lead Form */}
             <div>
               <LeadForm formTitle="Send Us a Message" />
@@ -33,7 +33,7 @@ export default function Contact() {
 
             {/* Right: Contact Info & Map */}
             <div className="space-y-8">
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <a href="tel:+919941888840" className="p-6 bg-white border border-border rounded-sm hover:border-gold transition-colors group flex flex-col items-start cursor-pointer">
                   <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-gold transition-colors">
@@ -64,7 +64,7 @@ export default function Contact() {
                     <Clock className="w-5 h-5 text-gold group-hover:text-white" />
                   </div>
                   <h3 className="font-heading font-bold text-xl text-charcoal mb-2">Working Hours</h3>
-                  <span className="font-body text-grey-text">Mon–Sat:<br/>9:00 AM – 6:00 PM</span>
+                  <span className="font-body text-grey-text">Mon–Sat:<br />9:00 AM – 6:00 PM</span>
                 </div>
               </div>
 

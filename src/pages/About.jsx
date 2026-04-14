@@ -10,13 +10,13 @@ import { Target, Award, Users, Gem } from 'lucide-react';
 export default function About() {
   return (
     <>
-      <SEOHead 
-        title="About SKY A Groups & S.S. Ponnarasan | Tamil Nadu"
-        description="Learn about the journey of SKY A Groups, founded by S.S. Ponnarasan. We are a trusted name in property, civil works, event management, and business solutions in Tamil Nadu."
+      <SEOHead
+        title="About Sky Groups & S.S. Ponnarasan | Tamil Nadu"
+        description="Learn about the journey of Sky Groups, founded by S.S. Ponnarasan. We are a trusted name in property, civil works, event management, and business solutions in Tamil Nadu."
       />
 
-      <HeroSection 
-        heading="About SKY A Groups"
+      <HeroSection
+        heading="About Sky Groups"
         subheading="Built on Excellence, Driven by Integrity."
         bgImage="https://picsum.photos/1920/1080?random=11"
         fullHeight={false}
@@ -34,10 +34,10 @@ export default function About() {
               viewport={{ once: true }}
               className="relative rounded-sm overflow-hidden shadow-2xl"
             >
-              <img src="https://picsum.photos/800/1000?random=12" alt="Corporate Building SKY A Groups" className="w-full h-auto object-cover aspect-[4/5]" />
+              <img src="https://picsum.photos/800/1000?random=12" alt="Corporate Building Sky Groups" className="w-full h-auto object-cover aspect-[4/5]" />
               <div className="absolute inset-0 border-[20px] border-white/20 pointer-events-none mix-blend-overlay"></div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -46,13 +46,13 @@ export default function About() {
               <span className="font-label text-gold tracking-widest uppercase text-sm font-bold mb-4 block">Our Origin</span>
               <h2 className="font-display font-bold text-4xl text-charcoal mb-6">A Vision for Integrated Excellence</h2>
               <div className="w-16 h-0.5 bg-gold mb-8"></div>
-              
+
               <div className="space-y-6 font-body text-grey-text text-lg leading-relaxed">
                 <p>
-                  SKY A Groups began with a simple but powerful idea: to offer individuals and businesses in Tamil Nadu a single, reliable hub for their most critical needs. We saw that clients were struggling to find trustworthy partners across different sectors—from constructing a home to marketing a business.
+                  Sky Groups began with a simple but powerful idea: to offer individuals and businesses in Tamil Nadu a single, reliable hub for their most critical needs. We saw that clients were struggling to find trustworthy partners across different sectors—from constructing a home to marketing a business.
                 </p>
                 <p>
-                  Thus, SKY A Groups was born, bringing together experts from real estate, construction, automotive, apparel, event planning, and digital IT into one cohesive unit.
+                  Thus, Sky Groups was born, bringing together experts from real estate, construction, automotive, apparel, event planning, and digital IT into one cohesive unit.
                 </p>
                 <p>
                   Today, we stand as a beacon of quality in the state. Our relentless pursuit of excellence ensures that every project we deliver carries the hallmark of durability, style, and absolute transparency.
@@ -91,16 +91,16 @@ export default function About() {
               <span className="font-label text-gold tracking-widest uppercase text-sm font-bold mb-4 block">Leadership</span>
               <h2 className="font-display font-bold text-4xl text-charcoal mb-6">Meet S.S. Ponnarasan</h2>
               <div className="w-16 h-0.5 bg-gold mb-8"></div>
-              
+
               <div className="space-y-6 font-body text-grey-text text-lg leading-relaxed">
                 <p>
-                  As the founding pillar of SKY A Groups, S.S. Ponnarasan has dedicated his career to establishing a benchmark in corporate integrity. Under his leadership, the organization has consistently prioritized client satisfaction above all else.
+                  As the founding pillar of Sky Groups, S.S. Ponnarasan has dedicated his career to establishing a benchmark in corporate integrity. Under his leadership, the organization has consistently prioritized client satisfaction above all else.
                 </p>
                 <div className="p-8 bg-white border border-border italic text-xl border-l-4 border-l-gold shadow-sm my-8">
-                  "Our goal is not just to close a deal, but to open a relationship. When you work with SKY A Groups, you become part of our extended family."
+                  "Our goal is not just to close a deal, but to open a relationship. When you work with Sky Groups, you become part of our extended family."
                 </div>
                 <p>
-                  His hands-on approach ensures that whether it is a massive civil construction project or a bespoke digital campaign, the core values of SKY A Groups remain deeply embedded in the execution.
+                  His hands-on approach ensures that whether it is a massive civil construction project or a bespoke digital campaign, the core values of Sky Groups remain deeply embedded in the execution.
                 </p>
               </div>
             </motion.div>
@@ -160,7 +160,7 @@ export default function About() {
         </div>
       </section>
 
-      <CTABanner 
+      <CTABanner
         heading="Experience the SKY A Difference"
         subtext="Join the hundreds of clients who trust us with their most valuable assets and projects."
         ctaText="Get Started Today"

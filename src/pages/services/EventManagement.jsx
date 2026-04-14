@@ -5,12 +5,12 @@ import eventWhatWeDoImg from '../../assets/event-management-whatwedo.jpg';
 
 export default function EventManagement() {
   return (
-    <ServicePageLayout 
+    <ServicePageLayout
       serviceId="event-management"
       heroImage={eventHeroImg}
       introImage={eventWhatWeDoImg}
       introParagraphs={[
-        "Events are milestones that deserve to be celebrated perfectly. SKY A Groups is a leading event management company specializing in corporate gatherings, grand weddings, and cultural fests across Tamil Nadu.",
+        "Events are milestones that deserve to be celebrated perfectly. Sky Groups is a leading event management company specializing in corporate gatherings, grand weddings, and cultural fests across Tamil Nadu.",
         "We take the burden of planning off your shoulders. Our extensive network of luxury venues, premium caterers, and renowned entertainers guarantees an unforgettable experience for you and your guests."
       ]}
       processSteps={[

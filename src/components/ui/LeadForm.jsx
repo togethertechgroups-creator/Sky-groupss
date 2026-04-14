@@ -28,11 +28,11 @@ export default function LeadForm({ serviceOptions = [], formTitle = "Request a F
     try {
       // Simulate API call for now since Formspree endpoint is a placeholder
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       console.log('Form data:', data);
       // In production:
       // await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body: JSON.stringify(data), headers: { 'Accept': 'application/json' } })
-      
+
       setIsSuccess(true);
     } catch (error) {
       console.error(error);
@@ -49,11 +49,11 @@ export default function LeadForm({ serviceOptions = [], formTitle = "Request a F
         </div>
         <h3 className="font-heading font-bold text-2xl text-charcoal mb-2">Request Received!</h3>
         <p className="font-body text-grey-text mb-8">
-          Thank you for reaching out to SKY A Groups. Our team will contact you shortly.
+          Thank you for reaching out to Sky Groups. Our team will contact you shortly.
         </p>
-        <a 
-          href="https://wa.me/919941888840" 
-          target="_blank" 
+        <a
+          href="https://wa.me/919941888840"
+          target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-green-500 hover:bg-green-600 text-white font-label px-8 py-3 rounded-sm uppercase tracking-wider text-sm transition-colors w-full"
         >
@@ -66,7 +66,7 @@ export default function LeadForm({ serviceOptions = [], formTitle = "Request a F
   return (
     <div className="bg-white p-8 md:p-10 rounded-sm shadow-xl border-t-4 border-gold relative">
       <h3 className="font-heading font-bold text-3xl text-charcoal mb-6 border-b border-border pb-4">{formTitle}</h3>
-      
+
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         <div>
           <label htmlFor="fullName" className="block font-label text-sm font-semibold text-charcoal mb-2 uppercase tracking-wide">
