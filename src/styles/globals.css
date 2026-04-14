@@ -7,11 +7,13 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   body {
     background-color: var(--off-white);
     color: var(--charcoal);
+    overflow-x: hidden;
   }
 
   /* Clip-path diagonal section utility */
