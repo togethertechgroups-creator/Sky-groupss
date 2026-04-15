@@ -22,12 +22,12 @@ export default function Contact() {
               "telephone": "+91-9941888840",
               "email": "ponskygroups@gmail.com",
               "url": "https://www.skygroupss.in",
-              "address": { 
-                "@type": "PostalAddress", 
-                "addressRegion": "Tamil Nadu", 
-                "addressCountry": "IN" 
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Tamil Nadu",
+                "addressCountry": "IN"
               },
-              "openingHours": "Mo-Sa 09:00-18:00",
+              "openingHours": "Mo-Su 10:00-22:00",
               "priceRange": "₹₹"
             }
           ]
@@ -35,7 +35,7 @@ export default function Contact() {
       />
 
       <HeroSection
-        heading="Get In Touch With Sky Groups"
+        heading="Get In Touch With SKY Groups"
         subheading="We are here to help you build, grow, and manage your business. Reach out to us for any inquiries."
         bgImage="https://picsum.photos/1920/1080?random=30"
         fullHeight={false}
@@ -85,7 +85,7 @@ export default function Contact() {
                     <Clock className="w-5 h-5 text-gold group-hover:text-white" />
                   </div>
                   <h3 className="font-heading font-bold text-xl text-charcoal mb-2">Working Hours</h3>
-                  <span className="font-body text-grey-text">Mon–Sat:<br />9:00 AM – 6:00 PM</span>
+                  <span className="font-body text-grey-text">Mon–Sun:<br />10:00 AM – 10:00 PM</span>
                 </div>
               </div>
 

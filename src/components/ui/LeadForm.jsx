@@ -51,7 +51,7 @@ export default function LeadForm({ serviceOptions = [], formTitle = "Request a F
         </div>
         <h3 className="font-heading font-bold text-2xl text-charcoal mb-2">Request Received!</h3>
         <p className="font-body text-grey-text mb-8">
-          Thank you for reaching out to Sky Groups. Our team will contact you shortly.
+          Thank you for reaching out to SKY Groups. Our team will contact you shortly.
         </p>
         <a
           href="https://wa.me/919941888840"

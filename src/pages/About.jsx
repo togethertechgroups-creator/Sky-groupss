@@ -45,7 +45,7 @@ export default function About() {
       />
 
       <HeroSection
-        heading="About Sky Groups"
+        heading="About SKY Groups"
         subheading="Built on Excellence, Driven by Integrity."
         bgImage="https://picsum.photos/1920/1080?random=11"
         fullHeight={false}
@@ -63,7 +63,7 @@ export default function About() {
               viewport={{ once: true }}
               className="relative rounded-sm overflow-hidden shadow-2xl"
             >
-              <img src="https://picsum.photos/800/1000?random=12" alt="Corporate Building Sky Groups" className="w-full h-auto object-cover aspect-[4/5]" />
+              <img src="https://picsum.photos/800/1000?random=12" alt="Corporate Building SKY Groups" className="w-full h-auto object-cover aspect-[4/5]" />
               <div className="absolute inset-0 border-[20px] border-white/20 pointer-events-none mix-blend-overlay"></div>
             </motion.div>
 
@@ -78,10 +78,10 @@ export default function About() {
 
               <div className="space-y-6 font-body text-grey-text text-lg leading-relaxed">
                 <p>
-                  Sky Groups began with a simple but powerful idea: to offer individuals and businesses in Tamil Nadu a single, reliable hub for their most critical needs. We saw that clients were struggling to find trustworthy partners across different sectors—from constructing a home to marketing a business.
+                  SKY Groups began with a simple but powerful idea: to offer individuals and businesses in Tamil Nadu a single, reliable hub for their most critical needs. We saw that clients were struggling to find trustworthy partners across different sectors—from constructing a home to marketing a business.
                 </p>
                 <p>
-                  Thus, Sky Groups was born, bringing together experts from real estate, construction, automotive, apparel, event planning, and digital IT into one cohesive unit.
+                  Thus, SKY Groups was born, bringing together experts from real estate, construction, automotive, apparel, event planning, and digital IT into one cohesive unit.
                 </p>
                 <p>
                   Today, we stand as a beacon of quality in the state. Our relentless pursuit of excellence ensures that every project we deliver carries the hallmark of durability, style, and absolute transparency.
@@ -103,10 +103,10 @@ export default function About() {
               className="relative lg:order-2"
             >
               <div className="border-4 border-gold p-2 md:p-4 rounded-sm bg-white">
-                <img 
-                  src={proprietorImg} 
-                  alt="S.S. Ponnarasan" 
-                  className="w-full h-auto object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700" 
+                <img
+                  src={proprietorImg}
+                  alt="S.S. Ponnarasan"
+                  className="w-full h-auto object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700"
                   loading="lazy"
                   width="600"
                   height="800"
@@ -130,13 +130,13 @@ export default function About() {
 
               <div className="space-y-6 font-body text-grey-text text-lg leading-relaxed">
                 <p>
-                  As the founding pillar of Sky Groups, S.S. Ponnarasan has dedicated his career to establishing a benchmark in corporate integrity. Under his leadership, the organization has consistently prioritized client satisfaction above all else.
+                  As the founding pillar of SKY Groups, S.S. Ponnarasan has dedicated his career to establishing a benchmark in corporate integrity. Under his leadership, the organization has consistently prioritized client satisfaction above all else.
                 </p>
                 <div className="p-8 bg-white border border-border italic text-xl border-l-4 border-l-gold shadow-sm my-8">
-                  "Our goal is not just to close a deal, but to open a relationship. When you work with Sky Groups, you become part of our extended family."
+                  "Our goal is not just to close a deal, but to open a relationship. When you work with SKY Groups, you become part of our extended family."
                 </div>
                 <p>
-                  His hands-on approach ensures that whether it is a massive civil construction project or a bespoke digital campaign, the core values of Sky Groups remain deeply embedded in the execution.
+                  His hands-on approach ensures that whether it is a massive civil construction project or a bespoke digital campaign, the core values of SKY Groups remain deeply embedded in the execution.
                 </p>
               </div>
             </motion.div>

@@ -8,7 +8,7 @@ export default function WebDesign() {
   return (
     <>
       <SplashCursor />
-    <ServicePageLayout
+      <ServicePageLayout
         serviceId="web-design"
         heroImage={webDesignHero}
         introImage={webDesignImg}
@@ -20,7 +20,7 @@ export default function WebDesign() {
           "address": { "@type": "PostalAddress", "addressRegion": "Tamil Nadu", "addressCountry": "IN" }
         }}
         introParagraphs={[
-          "In the modern era, your website is your digital storefront. Sky Groups designs and develops premium, lightning-fast, and deeply engaging websites that convert visitors into loyal customers.",
+          "In the modern era, your website is your digital storefront. SKY Groups designs and develops premium, lightning-fast, and deeply engaging websites that convert visitors into loyal customers.",
           "We build digital experiences tailored for businesses in Tamil Nadu. Our comprehensive packages include everything from UX design and SEO optimization to cloud hosting and ongoing security maintenance."
         ]}
         processSteps={[

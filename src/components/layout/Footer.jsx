@@ -21,12 +21,12 @@ export default function Footer() {
             <Link to="/" className="flex items-center group gap-3">
               <img
                 src={logoImg}
-                alt="Sky Groups Logo"
+                alt="SKY Groups Logo"
                 className="h-[50px] md:h-[60px] w-auto transition-transform duration-300 group-hover:scale-[1.02]"
               />
               <div className="flex flex-col justify-center">
                 <span className="font-display text-2xl md:text-3xl font-bold leading-none text-gold tracking-wider group-hover:text-white transition-colors duration-300">
-                  Sky Groups
+                  SKY Groups
                 </span>
               </div>
             </Link>
@@ -113,7 +113,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 py-6 text-center md:flex md:justify-between md:text-left">
           <p className="text-white/50 font-body text-xs">
-            &copy; {currentYear} Sky Groups. All rights reserved. Managed by S.S. Ponnarasan.
+            &copy; {currentYear} SKY Groups. All rights reserved. Managed by S.S. Ponnarasan.
           </p>
           <div className="mt-4 md:mt-0 space-x-4">
             <span className="text-white/50 hover:text-gold text-xs font-body cursor-pointer">Privacy Policy</span>

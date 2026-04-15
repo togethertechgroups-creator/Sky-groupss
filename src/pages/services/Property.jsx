@@ -17,7 +17,7 @@ export default function Property() {
         "address": { "@type": "PostalAddress", "addressRegion": "Tamil Nadu", "addressCountry": "IN" }
       }}
       introParagraphs={[
-        "Sky Groups provides unparalleled property development and real estate services across Tamil Nadu. Whether you are looking for premium residential plots, commercial real estate, or high-yield agricultural lands, we have the inventory and expertise.",
+        "SKY Groups provides unparalleled property development and real estate services across Tamil Nadu. Whether you are looking for premium residential plots, commercial real estate, or high-yield agricultural lands, we have the inventory and expertise.",
         "Our team handles everything from identifying high-growth corridors in the state, verifying legal titles, to executing clean and transparent registrations. We believe in creating generational wealth for our clients through smart real estate investments."
       ]}
       processSteps={[

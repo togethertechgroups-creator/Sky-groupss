@@ -31,7 +31,7 @@ export default function Services() {
           <div className="max-w-3xl mb-16">
             <h2 className="font-display text-3xl font-bold text-charcoal mb-6">One Group, Many Solutions</h2>
             <p className="font-body text-grey-text text-lg leading-relaxed">
-              Sky Groups was founded with a singular vision: to be the most reliable, diversified service provider in Tamil Nadu. We have meticulously curated our offerings to ensure that whether you are building a home, scaling a business, or hosting a monumental event, you have a trusted partner by your side.
+              SKY Groups was founded with a singular vision: to be the most reliable, diversified service provider in Tamil Nadu. We have meticulously curated our offerings to ensure that whether you are building a home, scaling a business, or hosting a monumental event, you have a trusted partner by your side.
             </p>
           </div>
 

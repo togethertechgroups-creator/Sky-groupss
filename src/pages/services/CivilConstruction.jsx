@@ -65,7 +65,7 @@ export default function CivilConstruction() {
         ]
       }}
       introParagraphs={[
-        "Building a home or a commercial complex is a massive undertaking. At Sky Groups, our Civil Construction division turns blueprints into reality with uncompromising quality and precise engineering.",
+        "Building a home or a commercial complex is a massive undertaking. At SKY Groups, our Civil Construction division turns blueprints into reality with uncompromising quality and precise engineering.",
         "We are equipped with modern machinery, highly skilled labor, and experienced architects to handle residential, commercial, and industrial projects anywhere in Tamil Nadu. We adhere strictly to National Building Codes and local climatic requirements."
       ]}
       processSteps={[

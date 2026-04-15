@@ -17,7 +17,7 @@ export default function EventManagement() {
         "address": { "@type": "PostalAddress", "addressRegion": "Tamil Nadu", "addressCountry": "IN" }
       }}
       introParagraphs={[
-        "Events are milestones that deserve to be celebrated perfectly. Sky Groups is a leading event management company specializing in corporate gatherings, grand weddings, and cultural fests across Tamil Nadu.",
+        "Events are milestones that deserve to be celebrated perfectly. SKY Groups is a leading event management company specializing in corporate gatherings, grand weddings, and cultural fests across Tamil Nadu.",
         "We take the burden of planning off your shoulders. Our extensive network of luxury venues, premium caterers, and renowned entertainers guarantees an unforgettable experience for you and your guests."
       ]}
       processSteps={[

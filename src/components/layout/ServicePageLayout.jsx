@@ -72,10 +72,10 @@ export default function ServicePageLayout({
               className="relative"
             >
               <div className="rounded-sm overflow-hidden shadow-2xl border-b-4 border-gold">
-                <img 
-                  src={introImage} 
-                  alt={service.name} 
-                  className="w-full h-auto aspect-video object-cover" 
+                <img
+                  src={introImage}
+                  alt={service.name}
+                  className="w-full h-auto aspect-video object-cover"
                   loading="lazy"
                   width="800"
                   height="450"
@@ -117,7 +117,7 @@ export default function ServicePageLayout({
         </div>
       </section>
 
-      {/* Why Sky Groups (Benefits) */}
+      {/* Why SKY Groups (Benefits) */}
       <section className="py-24 bg-charcoal text-white relative">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #1A1A1A 25%, transparent 25%, transparent 75%, #1A1A1A 75%, #1A1A1A), repeating-linear-gradient(45deg, #1A1A1A 25%, #D4A017 25%, #D4A017 75%, #1A1A1A 75%, #1A1A1A)', backgroundPosition: '0 0, 10px 10px', backgroundSize: '20px 20px' }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

@@ -32,12 +32,12 @@ export default function Navbar() {
           <Link to="/" className="flex items-center group py-1 gap-3">
             <img
               src={logoImg}
-              alt="Sky Groups Logo"
+              alt="SKY Groups Logo"
               className="h-[50px] md:h-[60px] w-auto transition-transform duration-300 group-hover:scale-[1.02]"
             />
             <div className="flex flex-col justify-center">
               <span className="font-display text-2xl md:text-3xl font-bold leading-none text-gold tracking-wider group-hover:text-white transition-colors duration-300">
-                Sky Groups
+                SKY Groups
               </span>
             </div>
           </Link>

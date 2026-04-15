@@ -32,7 +32,7 @@ export function useAnimatedCounter(targetValue, duration = 2000) {
       }
     };
 
-    observer = new IntersectionObserver(handleIntersect, { threshold: 0.5 });
+    observer = new IntersectionObserver(handleIntersect, { threshold: 0.1 });
     observer.observe(node);
 
     return () => {

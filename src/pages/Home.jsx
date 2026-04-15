@@ -77,7 +77,7 @@ export default function Home() {
 
       <HeroSection
         heading="Your Trusted Partner for Property, Construction & Business"
-        subheading="Sky Groups delivers exceptional quality across real estate, civil works, vehicles, branding, events, and digital — all under one trusted name."
+        subheading="SKY Groups delivers exceptional quality across real estate, civil works, vehicles, branding, events, and digital — all under one trusted name."
         bgImage={homeHeroImg}
         mainCtaText="Explore Services"
         mainCtaLink="/services"
@@ -98,10 +98,10 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-square bg-gray-200 relative overflow-hidden rounded-sm">
-                <img 
-                  src={legacyImg} 
-                  alt="Sky Groups Excellence" 
-                  className="object-cover w-full h-full" 
+                <img
+                  src={legacyImg}
+                  alt="SKY Groups Excellence"
+                  className="object-cover w-full h-full"
                   loading="lazy"
                   width="600"
                   height="600"
@@ -123,7 +123,7 @@ export default function Home() {
               <h2 className="font-display font-bold text-4xl mb-6 text-charcoal">A Legacy of Excellence in Tamil Nadu</h2>
               <div className="h-0.5 w-16 bg-gold mb-8"></div>
               <p className="font-body text-grey-text text-lg leading-relaxed mb-6">
-                Founded by S.S. Ponnarasan, Sky Groups has grown into a versatile powerhouse supporting individuals and businesses across Tamil Nadu. We don't just provide services; we build long-term relationships through unwavering integrity.
+                Founded by S.S. Ponnarasan, SKY Groups has grown into a versatile powerhouse supporting individuals and businesses across Tamil Nadu. We don't just provide services; we build long-term relationships through unwavering integrity.
               </p>
               <p className="font-body text-grey-text text-lg leading-relaxed mb-12">
                 Whether you're investing in property, constructing a home, buying a vehicle, or scaling your digital presence, we deliver premium solutions tailored to your success.
@@ -186,7 +186,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(#D4A017 1px, transparent 1px), linear-gradient(90deg, #D4A017 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeading
-            title="Why Choose Sky Groups"
+            title="Why Choose SKY Groups"
             centered={true}
           />
 
@@ -310,7 +310,7 @@ export default function Home() {
 
       <CTABanner
         heading="Ready to Work With Us?"
-        subtext="Contact Sky Groups today to discuss your next big project. Serving with pride across Tamil Nadu."
+        subtext="Contact SKY Groups today to discuss your next big project. Serving with pride across Tamil Nadu."
         ctaText="Get a Free Quote"
         ctaLink="/contact"
       />

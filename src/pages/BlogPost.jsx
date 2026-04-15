@@ -40,10 +40,10 @@ export default function BlogPost() {
           "@type": "BlogPosting",
           "headline": post.title,
           "author": { "@type": "Person", "name": "S.S. Ponnarasan" },
-          "publisher": { 
-            "@type": "Organization", 
-            "name": "SKY A Groups", 
-            "logo": "https://www.skygroupss.in/logo.png" 
+          "publisher": {
+            "@type": "Organization",
+            "name": "SKY A Groups",
+            "logo": "https://www.skygroupss.in/logo.png"
           },
           "datePublished": post.date,
           "dateModified": post.date,
@@ -145,7 +145,7 @@ export default function BlogPost() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-2xl"></div>
               <h3 className="relative z-10 font-heading font-bold text-2xl md:text-3xl mb-4">Ready to take action?</h3>
               <p className="relative z-10 font-body text-white/70 mb-8 max-w-xl mx-auto">
-                Sky Groups offers professional assistance tailored exactly to this topic. Discover how we can help you achieve your goals safely and efficiently.
+                SKY Groups offers professional assistance tailored exactly to this topic. Discover how we can help you achieve your goals safely and efficiently.
               </p>
               <StarBorder
                 as={Link}
