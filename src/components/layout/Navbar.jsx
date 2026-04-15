@@ -36,7 +36,7 @@ export default function Navbar() {
               className="h-[50px] md:h-[60px] w-auto transition-transform duration-300 group-hover:scale-[1.02]"
             />
             <div className="flex flex-col justify-center">
-              <span className="font-display text-2xl md:text-3xl font-bold leading-none text-gold tracking-wider group-hover:text-white transition-colors duration-300">
+              <span className="font-display text-2xl md:text-3xl font-bold leading-none text-gold tracking-wider group-hover:text-charcoal transition-colors duration-300">
                 SKY Groups
               </span>
             </div>
