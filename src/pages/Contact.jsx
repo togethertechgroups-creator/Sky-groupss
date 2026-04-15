@@ -27,7 +27,7 @@ export default function Contact() {
                 "addressRegion": "Tamil Nadu",
                 "addressCountry": "IN"
               },
-              "openingHours": "Mo-Su 10:00-22:00",
+              "openingHours": "Mo-Su 09:00-20:30",
               "priceRange": "₹₹"
             }
           ]
@@ -85,7 +85,7 @@ export default function Contact() {
                     <Clock className="w-5 h-5 text-gold group-hover:text-white" />
                   </div>
                   <h3 className="font-heading font-bold text-xl text-charcoal mb-2">Working Hours</h3>
-                  <span className="font-body text-grey-text">Mon–Sun:<br />10:00 AM – 10:00 PM</span>
+                  <span className="font-body text-grey-text">Mon–Sun:<br />9:00 AM – 8:30 PM</span>
                 </div>
               </div>
 
