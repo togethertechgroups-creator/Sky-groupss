@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { CheckCircle2 } from 'lucide-react';
 import StarBorder from './StarBorder';
+import { trackLead } from '../../utils/analytics';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/placeholder'; // Add Form ID
 
@@ -34,6 +35,7 @@ export default function LeadForm({ serviceOptions = [], formTitle = "Request a F
       // await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body: JSON.stringify(data), headers: { 'Accept': 'application/json' } })
 
       setIsSuccess(true);
+      trackLead(data.service || 'General', 'form');
     } catch (error) {
       console.error(error);
     } finally {

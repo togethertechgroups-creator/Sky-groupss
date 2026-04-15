@@ -6,6 +6,10 @@ import App from './App.jsx';
 // Import CSS
 import './styles/variables.css';
 import './styles/globals.css';
+import { initFbPixel } from './utils/fbPixel';
+
+// Initialize Analytics
+initFbPixel();
 
 // Import Fonts explicitly
 import '@fontsource/cormorant-garamond/400.css';

@@ -6,13 +6,42 @@ import BreadCrumb from '../components/ui/BreadCrumb';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
 import CTABanner from '../components/ui/CTABanner';
 import { Target, Award, Users, Gem } from 'lucide-react';
+import proprietorImg from '../assets/ponnarasan.png';
 
 export default function About() {
   return (
     <>
       <SEOHead
-        title="About Sky Groups & S.S. Ponnarasan | Tamil Nadu"
-        description="Learn about the journey of Sky Groups, founded by S.S. Ponnarasan. We are a trusted name in property, civil works, event management, and business solutions in Tamil Nadu."
+        title="About SKY A Groups | S.S. Ponnarasan Tamil Nadu"
+        description="Learn about SKY A Groups founded by S.S. Ponnarasan. Trusted multi-service business group serving Tamil Nadu with expertise across 6 industries."
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "AboutPage",
+              "name": "About SKY A Groups",
+              "url": "https://www.skygroupss.in/about",
+              "description": "Learn about SKY A Groups founded by S.S. Ponnarasan"
+            },
+            {
+              "@type": "Person",
+              "name": "S.S. Ponnarasan",
+              "jobTitle": "Proprietor",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "SKY A Groups"
+              },
+              "telephone": "+91-9941888840",
+              "email": "ponskygroups@gmail.com",
+              "url": "https://www.skygroupss.in/about",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Tamil Nadu",
+                "addressCountry": "IN"
+              }
+            }
+          ]
+        }}
       />
 
       <HeroSection
@@ -74,7 +103,14 @@ export default function About() {
               className="relative lg:order-2"
             >
               <div className="border-4 border-gold p-2 md:p-4 rounded-sm bg-white">
-                <img src="https://picsum.photos/600/800?random=13" alt="S.S. Ponnarasan" className="w-full h-auto object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700" />
+                <img 
+                  src={proprietorImg} 
+                  alt="S.S. Ponnarasan" 
+                  className="w-full h-auto object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-700" 
+                  loading="lazy"
+                  width="600"
+                  height="800"
+                />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-charcoal text-white px-8 py-6 rounded-sm shadow-xl border-l-4 border-gold hidden md:block">
                 <span className="block font-display text-xl">- S.S. Ponnarasan</span>

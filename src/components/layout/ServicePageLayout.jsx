@@ -18,6 +18,7 @@ export default function ServicePageLayout({
   heroImage,
   processSteps,
   benefits,
+  schema = null
 }) {
   const service = services.find(s => s.id === serviceId);
   const serviceFaqs = faqs[serviceId] || [];
@@ -29,6 +30,7 @@ export default function ServicePageLayout({
       <SEOHead
         title={service.metaTitle}
         description={service.metaDesc}
+        schema={schema}
       />
 
       <HeroSection
@@ -70,7 +72,14 @@ export default function ServicePageLayout({
               className="relative"
             >
               <div className="rounded-sm overflow-hidden shadow-2xl border-b-4 border-gold">
-                <img src={introImage} alt={service.name} className="w-full h-auto aspect-video object-cover" />
+                <img 
+                  src={introImage} 
+                  alt={service.name} 
+                  className="w-full h-auto aspect-video object-cover" 
+                  loading="lazy"
+                  width="800"
+                  height="450"
+                />
               </div>
               <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-charcoal rounded-full flex items-center justify-center border-4 border-white shadow-lg">
                 <span className="font-display font-bold text-3xl text-gold">#1</span>

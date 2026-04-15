@@ -9,6 +9,13 @@ export default function EventManagement() {
       serviceId="event-management"
       heroImage={eventHeroImg}
       introImage={eventWhatWeDoImg}
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "SKY A Groups — Event Management",
+        "telephone": "+91-9941888840",
+        "address": { "@type": "PostalAddress", "addressRegion": "Tamil Nadu", "addressCountry": "IN" }
+      }}
       introParagraphs={[
         "Events are milestones that deserve to be celebrated perfectly. Sky Groups is a leading event management company specializing in corporate gatherings, grand weddings, and cultural fests across Tamil Nadu.",
         "We take the burden of planning off your shoulders. Our extensive network of luxury venues, premium caterers, and renowned entertainers guarantees an unforgettable experience for you and your guests."

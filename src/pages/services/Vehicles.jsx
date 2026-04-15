@@ -9,6 +9,13 @@ export default function Vehicles() {
       serviceId="vehicles"
       heroImage={carsHeroImg}
       introImage={bikesImg}
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "AutoDealer",
+        "name": "SKY A Groups — Car & Bike Sales",
+        "telephone": "+91-9941888840",
+        "address": { "@type": "PostalAddress", "addressRegion": "Tamil Nadu", "addressCountry": "IN" }
+      }}
       introParagraphs={[
         "Navigating the pre-owned vehicle market can be stressful. Sky Groups ensures that buying or selling used cars and bikes in Tamil Nadu is a transparent, secure, and rewarding experience.",
         "Every vehicle in our showroom undergoes a rigorous multi-point inspection. We handle the tricky paperwork, offer fair market valuations, and provide financing options so you can drive away with peace of mind."

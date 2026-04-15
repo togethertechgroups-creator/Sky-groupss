@@ -12,8 +12,8 @@ export default function Services() {
   return (
     <>
       <SEOHead
-        title="Our Services — Property, Construction, Vehicles | Sky Groups"
-        description="Explore the multi-service excellence of Sky Groups in Tamil Nadu. We offer property development, civil works, vehicle sales, uniforms, events, and web design."
+        title="Our Services | SKY A Groups Tamil Nadu"
+        description="SKY A Groups offers property, construction, car sales, uniforms, events & web design across Tamil Nadu. Call 9941888840."
       />
 
       <HeroSection

@@ -20,8 +20,8 @@ export default function Blog() {
   return (
     <>
       <SEOHead
-        title="Blog — Property, Construction & Business Tips | Sky Groups"
-        description="Expert insights from Sky Groups on property, civil construction, event planning, vehicle sales, and web design in Tamil Nadu."
+        title="Blog | Property & Business Tips | SKY A Groups"
+        description="Expert insights from SKY A Groups on property, construction, event planning, vehicle sales and web design for Tamil Nadu businesses."
       />
 
       <HeroSection

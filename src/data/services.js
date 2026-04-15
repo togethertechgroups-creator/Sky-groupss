@@ -6,8 +6,8 @@ export const services = [
     shortDesc: 'Professional, SEO-optimized websites for Tamil Nadu businesses.',
     icon: 'Monitor',
     heroHeading: 'Professional Website Design Services in Tamil Nadu',
-    metaTitle: 'Professional Website Design Services Tamil Nadu — Sky Groups',
-    metaDesc: 'SEO-optimized, mobile-responsive websites for businesses in Tamil Nadu. Affordable packages. Call 9941888840.',
+    metaTitle: 'Website Design Services Tamil Nadu | SKY A',
+    metaDesc: 'SEO-optimized, mobile-responsive websites for Tamil Nadu businesses. Affordable packages from SKY A Groups. Call 9941888840 today.',
   },
   {
     id: 'property',
@@ -16,8 +16,8 @@ export const services = [
     shortDesc: 'Buying & selling residential and commercial property in Tamil Nadu.',
     icon: 'Building2',
     heroHeading: "Property Developer's — Buying & Selling Services in Tamil Nadu",
-    metaTitle: 'Property Buying & Selling in Tamil Nadu — Sky Groups',
-    metaDesc: 'Trusted property buying and selling services in Tamil Nadu. Residential, commercial, and land deals with expert guidance. Contact 9941888840.',
+    metaTitle: 'Property Buying & Selling Tamil Nadu | SKY A',
+    metaDesc: 'Buy or sell residential and commercial property in Tamil Nadu with SKY A Groups. Expert guidance, transparent deals. Call 9941888840 today.',
   },
   {
     id: 'civil-construction',
@@ -26,8 +26,8 @@ export const services = [
     shortDesc: 'All types of civil works and construction across Tamil Nadu.',
     icon: 'HardHat',
     heroHeading: 'All Types of Civil Works & Construction in Tamil Nadu',
-    metaTitle: 'Civil Works & Construction Services Tamil Nadu — Sky Groups',
-    metaDesc: 'All types of civil works and construction in Tamil Nadu — residential to commercial. Get your free estimate today.',
+    metaTitle: 'Civil Construction Services Tamil Nadu | SKY A',
+    metaDesc: 'All types of civil works and construction in Tamil Nadu. Residential to commercial projects. Get your free estimate from SKY A Groups today.',
   },
   {
     id: 'vehicles',
@@ -36,8 +36,8 @@ export const services = [
     shortDesc: 'Buy and sell cars and bikes with fair pricing and quick process.',
     icon: 'Car',
     heroHeading: 'Car & Bike Buying and Selling Services — Tamil Nadu',
-    metaTitle: 'Used Car & Bike Buying and Selling Tamil Nadu — Sky Groups',
-    metaDesc: 'Buy or sell used cars and bikes in Tamil Nadu. Fair pricing, quick evaluation, hassle-free paperwork. Call 9941888840.',
+    metaTitle: 'Car & Bike Buy Sell Tamil Nadu | SKY A Groups',
+    metaDesc: 'Buy or sell used cars and bikes in Tamil Nadu with SKY A Groups. Fair pricing, quick process, paperwork support. Call 9941888840 now.',
   },
   {
     id: 'tshirts-uniforms',
@@ -46,8 +46,8 @@ export const services = [
     shortDesc: 'Custom t-shirts, uniforms and corporate gifting solutions.',
     icon: 'Shirt',
     heroHeading: 'T-Shirts, Uniforms & Corporate Gifting Solutions in Tamil Nadu',
-    metaTitle: 'Custom T-Shirts, Uniforms & Corporate Gifting Tamil Nadu — Sky Groups',
-    metaDesc: 'Custom t-shirts, school & corporate uniforms, and gifting in Tamil Nadu. Bulk orders with logo printing.',
+    metaTitle: 'Custom T-Shirts & Uniforms Tamil Nadu | SKY A',
+    metaDesc: 'Custom t-shirts, corporate uniforms and gifting in Tamil Nadu. Bulk orders with logo printing. Contact SKY A Groups: 9941888840.',
   },
   {
     id: 'event-management',
@@ -56,7 +56,7 @@ export const services = [
     shortDesc: 'Professional event management for corporate and social events.',
     icon: 'CalendarDays',
     heroHeading: 'Professional Event Management Services in Tamil Nadu',
-    metaTitle: 'Event Management Services Tamil Nadu — Sky Groups',
-    metaDesc: 'Professional event management in Tamil Nadu for corporate events, weddings, and social gatherings.',
+    metaTitle: 'Event Management Tamil Nadu | SKY A Groups',
+    metaDesc: 'Professional event management in Tamil Nadu for corporate events, weddings and social gatherings. Get your custom package from SKY A Groups.',
   }
 ];

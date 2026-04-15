@@ -19,11 +19,17 @@ export default function HeroSection({
       className={`relative w-full ${fullHeight ? 'min-h-[100vh]' : 'min-h-[50vh]'} flex items-center justify-center pt-20 overflow-hidden`}
     >
       {/* Background Image with Gradient Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      ></div>
-      <div className="absolute inset-0 z-0 bg-charcoal/70"></div>
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={bgImage} 
+          alt={heading} 
+          className="w-full h-full object-cover" 
+          loading={fullHeight ? "eager" : "lazy"}
+          width="1920"
+          height="1080"
+        />
+        <div className="absolute inset-0 bg-charcoal/70"></div>
+      </div>
       
 
 

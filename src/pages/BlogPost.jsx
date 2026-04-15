@@ -33,8 +33,23 @@ export default function BlogPost() {
   return (
     <>
       <SEOHead
-        title={`${post.title} | Sky Groups Blog`}
+        title={`${post.title} | SKY A Groups Blog`}
         description={post.excerpt}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "author": { "@type": "Person", "name": "S.S. Ponnarasan" },
+          "publisher": { 
+            "@type": "Organization", 
+            "name": "SKY A Groups", 
+            "logo": "https://www.skygroupss.in/logo.png" 
+          },
+          "datePublished": post.date,
+          "dateModified": post.date,
+          "description": post.excerpt,
+          "url": `https://www.skygroupss.in/blog/${post.slug}`
+        }}
       />
 
       {/* Article Hero */}

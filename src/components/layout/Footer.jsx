@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { services } from '../../data/services';
-import { Phone, Mail, MessageCircle, MapPin, ArrowRight } from 'lucide-react';
+import { SOCIAL_LINKS } from '../../data/social';
+import { Phone, Mail, MessageCircle, MapPin, ArrowRight, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import logoImg from '../../assets/WhatsApp_Image_2026-04-14_at_2.09.37_PM-removebg-preview.png';
 
 export default function Footer() {
@@ -69,19 +70,19 @@ export default function Footer() {
             <h3 className="font-display text-xl font-bold mb-6 text-white border-b border-white/10 pb-2 inline-block">Get In Touch</h3>
             <ul className="space-y-4">
               <li>
-                <a href="tel:+919941888840" className="flex items-start text-white/70 hover:text-gold transition-colors cursor-pointer">
+                <a href={SOCIAL_LINKS.phone} className="flex items-start text-white/70 hover:text-gold transition-colors cursor-pointer">
                   <Phone className="w-5 h-5 mr-3 mt-0.5 text-gold shrink-0" />
                   <span className="font-body text-sm">+91 99418 88840</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:ponskygroups@gmail.com" className="flex items-start text-white/70 hover:text-gold transition-colors cursor-pointer">
+                <a href={SOCIAL_LINKS.email} className="flex items-start text-white/70 hover:text-gold transition-colors cursor-pointer">
                   <Mail className="w-5 h-5 mr-3 mt-0.5 text-gold shrink-0" />
                   <span className="font-body text-sm break-all">ponskygroups@gmail.com</span>
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/919941888840" target="_blank" rel="noopener noreferrer" className="flex items-start text-white/70 hover:text-gold transition-colors cursor-pointer">
+                <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-start text-white/70 hover:text-gold transition-colors cursor-pointer">
                   <MessageCircle className="w-5 h-5 mr-3 mt-0.5 text-gold shrink-0" />
                   <span className="font-body text-sm">Chat on WhatsApp</span>
                 </a>
@@ -91,6 +92,20 @@ export default function Footer() {
                 <span className="font-body text-sm"> Tamil Nadu, India</span>
               </li>
             </ul>
+            <div className="flex gap-4 mt-6">
+              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all text-white/70 hover:text-white" aria-label="Facebook">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all text-white/70 hover:text-white" aria-label="Instagram">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all text-white/70 hover:text-white" aria-label="YouTube">
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all text-white/70 hover:text-white" aria-label="LinkedIn">
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
         </div>

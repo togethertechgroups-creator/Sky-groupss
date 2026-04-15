@@ -3,14 +3,35 @@ import SEOHead from '../components/seo/SEOHead';
 import HeroSection from '../components/ui/HeroSection';
 import BreadCrumb from '../components/ui/BreadCrumb';
 import LeadForm from '../components/ui/LeadForm';
+import { SOCIAL_LINKS } from '../data/social';
 import { Phone, Mail, MessageCircle, Clock, MapPin } from 'lucide-react';
 
 export default function Contact() {
   return (
     <>
       <SEOHead
-        title="Contact Sky Groups — Call or WhatsApp 9941888840"
-        description="Contact Sky Groups. Call or WhatsApp 9941888840 or email ponskygroups@gmail.com for property, construction, events, and more."
+        title="Contact SKY A Groups | Call 9941888840"
+        description="Contact SKY A Groups by S.S. Ponnarasan. Call or WhatsApp 9941888840 or email ponskygroups@gmail.com for all service enquiries."
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            { "@type": "ContactPage", "url": "https://www.skygroupss.in/contact" },
+            {
+              "@type": "LocalBusiness",
+              "name": "SKY A Groups",
+              "telephone": "+91-9941888840",
+              "email": "ponskygroups@gmail.com",
+              "url": "https://www.skygroupss.in",
+              "address": { 
+                "@type": "PostalAddress", 
+                "addressRegion": "Tamil Nadu", 
+                "addressCountry": "IN" 
+              },
+              "openingHours": "Mo-Sa 09:00-18:00",
+              "priceRange": "₹₹"
+            }
+          ]
+        }}
       />
 
       <HeroSection
@@ -35,7 +56,7 @@ export default function Contact() {
             <div className="space-y-8">
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <a href="tel:+919941888840" className="p-6 bg-white border border-border rounded-sm hover:border-gold transition-colors group flex flex-col items-start cursor-pointer">
+                <a href={SOCIAL_LINKS.phone} className="p-6 bg-white border border-border rounded-sm hover:border-gold transition-colors group flex flex-col items-start cursor-pointer">
                   <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-gold transition-colors">
                     <Phone className="w-5 h-5 text-gold group-hover:text-white" />
                   </div>
@@ -43,7 +64,7 @@ export default function Contact() {
                   <span className="font-body text-grey-text group-hover:text-gold transition-colors">+91 99418 88840</span>
                 </a>
 
-                <a href="https://wa.me/919941888840" target="_blank" rel="noopener noreferrer" className="p-6 bg-white border border-border rounded-sm hover:border-gold transition-colors group flex flex-col items-start cursor-pointer">
+                <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="p-6 bg-white border border-border rounded-sm hover:border-gold transition-colors group flex flex-col items-start cursor-pointer">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-500 transition-colors">
                     <MessageCircle className="w-5 h-5 text-green-600 group-hover:text-white" />
                   </div>
@@ -51,7 +72,7 @@ export default function Contact() {
                   <span className="font-body text-grey-text group-hover:text-green-600 transition-colors">Chat with us</span>
                 </a>
 
-                <a href="mailto:ponskygroups@gmail.com" className="p-6 bg-white border border-border rounded-sm hover:border-gold transition-colors group flex flex-col items-start cursor-pointer">
+                <a href={SOCIAL_LINKS.email} className="p-6 bg-white border border-border rounded-sm hover:border-gold transition-colors group flex flex-col items-start cursor-pointer">
                   <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-gold transition-colors">
                     <Mail className="w-5 h-5 text-gold group-hover:text-white" />
                   </div>

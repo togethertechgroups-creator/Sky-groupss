@@ -9,6 +9,13 @@ export default function TshirtsUniforms() {
       serviceId="tshirts-uniforms"
       heroImage={tshirtHeroImg}
       introImage={uniformImg}
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "SKY A Groups — T-Shirts & Uniforms",
+        "telephone": "+91-9941888840",
+        "address": { "@type": "PostalAddress", "addressRegion": "Tamil Nadu", "addressCountry": "IN" }
+      }}
       introParagraphs={[
         "Brand identity goes beyond a logo. Sky Groups offers comprehensive corporate apparel and gifting solutions that help your team look professional and feel unified.",
         "From school uniforms to corporate polos and premium branded gifts, we manage large bulk orders with precision. Our manufacturing partners use high-quality fabrics and advanced printing technology to ensure durability and color retention."

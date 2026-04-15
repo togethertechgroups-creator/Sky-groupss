@@ -8,6 +8,14 @@ export default function Property() {
       serviceId="property"
       heroImage="https://picsum.photos/1920/1080?random=40"
       introImage={propertyImg}
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "SKY A Groups — Property Services",
+        "url": "https://www.skygroupss.in/services/property",
+        "telephone": "+91-9941888840",
+        "address": { "@type": "PostalAddress", "addressRegion": "Tamil Nadu", "addressCountry": "IN" }
+      }}
       introParagraphs={[
         "Sky Groups provides unparalleled property development and real estate services across Tamil Nadu. Whether you are looking for premium residential plots, commercial real estate, or high-yield agricultural lands, we have the inventory and expertise.",
         "Our team handles everything from identifying high-growth corridors in the state, verifying legal titles, to executing clean and transparent registrations. We believe in creating generational wealth for our clients through smart real estate investments."

@@ -8,6 +8,7 @@ import ServiceCard from '../components/ui/ServiceCard';
 import CTABanner from '../components/ui/CTABanner';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
 import { services } from '../data/services';
+import { SOCIAL_LINKS } from '../data/social';
 import { testimonials } from '../data/testimonials';
 import postsData from '../data/blog-posts.json';
 import { Shield, Star, Heart } from 'lucide-react';
@@ -29,8 +30,49 @@ export default function Home() {
   return (
     <>
       <SEOHead
-        title="Sky Groups — Property, Construction, Events & More | Tamil Nadu"
-        description="Sky Groups by S.S. Ponnarasan offers property development, civil works, car & bike sales, t-shirts, event management, and web design across Tamil Nadu. Call 9941888840."
+        title="SKY A Groups | Multi-Service Business Tamil Nadu"
+        description="SKY A Groups offers property, construction, car sales, uniforms, events & web design across Tamil Nadu. Call S.S. Ponnarasan: 9941888840."
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "name": "SKY A Groups",
+              "url": "https://www.skygroupss.in",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.skygroupss.in/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            },
+            {
+              "@type": "Organization",
+              "name": "SKY A Groups",
+              "url": "https://www.skygroupss.in",
+              "logo": "https://www.skygroupss.in/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9941888840",
+                "contactType": "customer service",
+                "availableLanguage": "English"
+              },
+              "sameAs": [
+                "https://www.facebook.com/skyagroups",
+                "https://www.instagram.com/skyagroups"
+              ]
+            },
+            {
+              "@type": "LocalBusiness",
+              "name": "SKY A Groups",
+              "telephone": "+91-9941888840",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Tamil Nadu",
+                "addressCountry": "IN"
+              }
+            }
+          ]
+        }}
       />
 
       <HeroSection
@@ -40,7 +82,7 @@ export default function Home() {
         mainCtaText="Explore Services"
         mainCtaLink="/services"
         secondaryCtaText="WhatsApp Us"
-        secondaryCtaLink="https://wa.me/919941888840"
+        secondaryCtaLink={SOCIAL_LINKS.whatsapp}
         fullHeight={true}
       />
 
@@ -56,7 +98,14 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-square bg-gray-200 relative overflow-hidden rounded-sm">
-                <img src={legacyImg} alt="Sky Groups Excellence" className="object-cover w-full h-full" />
+                <img 
+                  src={legacyImg} 
+                  alt="Sky Groups Excellence" 
+                  className="object-cover w-full h-full" 
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                />
                 <div className="absolute inset-0 bg-gold/10"></div>
               </div>
               <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-charcoal text-gold flex flex-col justify-center items-center rounded-sm shadow-2xl p-6 hidden md:flex border-t-4 border-gold">
