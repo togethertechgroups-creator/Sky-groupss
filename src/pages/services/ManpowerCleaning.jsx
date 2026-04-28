@@ -1,11 +1,14 @@
 import React from 'react';
 import ServicePageLayout from '../../components/layout/ServicePageLayout';
+import heroImg from '../../assets/manpower-hero.png';
+import introImg from '../../assets/cleaning-intro.png';
 
 export default function ManpowerCleaning() {
   return (
     <ServicePageLayout
       serviceId="manpower-cleaning"
-      heroImage="https://picsum.photos/1920/1080?random=50"
+      heroImage={heroImg}
+      introImage={introImg}
       schema={{
         "@context": "https://schema.org",
         "@type": "Service",
