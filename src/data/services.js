@@ -62,7 +62,7 @@ export const services = [
   {
     id: 'manpower-cleaning',
     slug: '/services/manpower-cleaning',
-    name: 'Staffing & Cleaning Services',
+    name: 'Facility Management Service',
     shortDesc: 'Professional manpower, housekeeping, and deep cleaning solutions.',
     icon: 'Users',
     heroHeading: 'Professional Facility Management & Staffing Solutions',
