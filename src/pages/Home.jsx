@@ -7,7 +7,9 @@ import SectionHeading from '../components/ui/SectionHeading';
 import ServiceCard from '../components/ui/ServiceCard';
 import CTABanner from '../components/ui/CTABanner';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
+import FAQAccordion from '../components/ui/FAQAccordion';
 import { services } from '../data/services';
+import { faqs } from '../data/faqs';
 import { SOCIAL_LINKS } from '../data/social';
 import { testimonials } from '../data/testimonials';
 import postsData from '../data/blog-posts.json';
@@ -256,6 +258,20 @@ export default function Home() {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Frequently Asked Questions"
+            subtitle="Common queries about our services, process, and commitment to you."
+            centered={true}
+          />
+          <div className="mt-12">
+            <FAQAccordion faqs={faqs.general} />
           </div>
         </div>
       </section>

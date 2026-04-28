@@ -40,5 +40,12 @@ export const faqs = {
     { question: 'Will my website be SEO optimized?', answer: 'Absolutely. We build SEO-ready architecture, meta tags, fast loading speeds, and proper heading structures.' },
     { question: 'Can I update the content myself later?', answer: 'Yes, we can build your site on a user-friendly CMS that allows you to easily edit text and images without coding knowledge.' },
     { question: 'Do you offer ongoing maintenance?', answer: 'Yes, we offer monthly or annual AMCs that cover security updates, content changes, and technical support.' }
+  ],
+  'general': [
+    { question: 'What all services does SKY Groups provide?', answer: 'We offer Property & Real Estate, Civil Construction, Pre-owned Car & Bike Sales, T-Shirts & Uniforms, Event Management, Web Design, and Staffing & Cleaning Services across entire Tamil Nadu.' },
+    { question: 'Where is your main office located?', answer: 'Our operations cover the entirety of Tamil Nadu. We manage large-scale projects and services in Chennai, Coimbatore, Madurai, and other major districts. Give us a call to find a representative near your location.' },
+    { question: 'Are your property and construction services legally verified?', answer: 'Yes, we ensure 100% legal transparency. All real estate transactions undergo a strict 50-point legal audit including DTCP/CMDA checks, Patta, and EC records before any commitment.' },
+    { question: 'How do I book a service or get a quote?', answer: 'To get an instant free quote or consultation, you can call or WhatsApp S.S. Ponnarasan directly at +91-9941888840. We usually respond within an hour.' },
+    { question: 'Do you cater to both individual and corporate clients?', answer: 'Absolutely. Whether it is an individual looking to buy a house or a corporate needing 500 custom uniforms, our specialized teams are equipped to handle any scale.' }
   ]
 };
