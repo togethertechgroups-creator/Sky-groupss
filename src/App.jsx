@@ -22,6 +22,7 @@ const Vehicles = lazy(() => import('./pages/services/Vehicles'));
 const TshirtsUniforms = lazy(() => import('./pages/services/TshirtsUniforms'));
 const EventManagement = lazy(() => import('./pages/services/EventManagement'));
 const WebDesign = lazy(() => import('./pages/services/WebDesign'));
+const ManpowerCleaning = lazy(() => import('./pages/services/ManpowerCleaning'));
 
 // Blog Pages (Lazy Loaded)
 const Blog = lazy(() => import('./pages/Blog'));
@@ -49,6 +50,7 @@ function App() {
               <Route path="/services/tshirts-uniforms" element={<TshirtsUniforms />} />
               <Route path="/services/event-management" element={<EventManagement />} />
               <Route path="/services/web-design" element={<WebDesign />} />
+              <Route path="/services/manpower-cleaning" element={<ManpowerCleaning />} />
               
               {/* Blog */}
               <Route path="/blog" element={<Blog />} />

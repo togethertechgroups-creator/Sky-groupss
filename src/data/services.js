@@ -58,5 +58,15 @@ export const services = [
     heroHeading: 'Professional Event Management Services in Tamil Nadu',
     metaTitle: 'Event Management Tamil Nadu | SKY A Groups',
     metaDesc: 'Professional event management in Tamil Nadu for corporate events, weddings and social gatherings. Get your custom package from SKY A Groups.',
+  },
+  {
+    id: 'manpower-cleaning',
+    slug: '/services/manpower-cleaning',
+    name: 'Staffing & Cleaning Services',
+    shortDesc: 'Professional manpower, housekeeping, and deep cleaning solutions.',
+    icon: 'Users',
+    heroHeading: 'Professional Facility Management & Staffing Solutions',
+    metaTitle: 'Staffing & Cleaning Services Tamil Nadu | Sky Groups',
+    metaDesc: 'Reliable housekeeping, security guards, nursing, and deep cleaning services across Tamil Nadu.',
   }
 ];
