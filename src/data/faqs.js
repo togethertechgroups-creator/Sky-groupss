@@ -41,6 +41,13 @@ export const faqs = {
     { question: 'Can I update the content myself later?', answer: 'Yes, we can build your site on a user-friendly CMS that allows you to easily edit text and images without coding knowledge.' },
     { question: 'Do you offer ongoing maintenance?', answer: 'Yes, we offer monthly or annual AMCs that cover security updates, content changes, and technical support.' }
   ],
+  'manpower-cleaning': [
+    { question: 'What types of cleaning services do you provide?', answer: 'We offer comprehensive deep cleaning, home cleaning, office cleaning, industrial cleaning, and specialized showroom cleaning across Tamil Nadu.' },
+    { question: 'Are your housekeeping and security staff trained?', answer: 'Yes, all our personnel undergo strict background checks and professional training before being deployed to your residential or corporate facility.' },
+    { question: 'Can we hire staff for short-term events?', answer: 'Absolutely. We provide flexible manpower solutions including security guards and receptionists for short-term events, exhibitions, and corporate functions.' },
+    { question: 'Do you provide cleaning equipment and chemicals?', answer: 'Yes, our deep cleaning teams come fully equipped with high-grade, safe cleaning agents and modern industrial equipment.' },
+    { question: 'How quickly can you deploy security or housekeeping staff?', answer: 'Depending on your location and specific requirements, we can usually deploy vetted personnel within 48 to 72 hours.' }
+  ],
   'general': [
     { question: 'What all services does SKY Groups provide?', answer: 'We offer Property & Real Estate, Civil Construction, Pre-owned Car & Bike Sales, T-Shirts & Uniforms, Event Management, Web Design, and Staffing & Cleaning Services across entire Tamil Nadu.' },
     { question: 'Where is your main office located?', answer: 'Our operations cover the entirety of Tamil Nadu. We manage large-scale projects and services in Chennai, Coimbatore, Madurai, and other major districts. Give us a call to find a representative near your location.' },
