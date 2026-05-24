@@ -5,7 +5,7 @@ import { ChevronRight } from 'lucide-react';
 export default function BreadCrumb({ crumbs }) {
   return (
     <nav className="flex px-4 py-4 md:px-8 text-sm font-label uppercase tracking-wider text-grey-text max-w-7xl mx-auto w-full">
-      <ol className="inline-flex items-center space-x-1 md:space-x-3">
+      <ol className="flex flex-wrap items-center gap-y-1.5 gap-x-1 sm:gap-x-2">
         {crumbs.map((crumb, index) => {
           const isLast = index === crumbs.length - 1;
           
@@ -21,7 +21,7 @@ export default function BreadCrumb({ crumbs }) {
                   >
                     {crumb.label}
                   </Link>
-                  <ChevronRight className="w-4 h-4 mx-2 text-border" />
+                  <ChevronRight className="w-4 h-4 mx-1 sm:mx-1.5 text-border" />
                 </>
               )}
             </li>

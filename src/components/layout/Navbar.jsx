@@ -22,131 +22,142 @@ export default function Navbar() {
   const isServiceActive = location.pathname.startsWith('/services');
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md border-b-2 border-gold/20 ${isScrolled ? 'py-3' : 'py-5'
-        }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex items-center group py-1 gap-3">
-            <img
-              src={logoImg}
-              alt="SKY Groups Logo"
-              className="h-[50px] md:h-[60px] w-auto transition-transform duration-300 group-hover:scale-[1.02]"
-            />
-            <div className="flex flex-col justify-center">
-              <span className="font-display text-2xl md:text-3xl font-bold leading-none text-gold tracking-wider group-hover:text-charcoal transition-colors duration-300">
-                SKY Groups
-              </span>
-            </div>
-          </Link>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/"
-              className={`font-label uppercase text-sm tracking-wider hover:text-gold transition-colors ${isActive('/') ? 'text-gold' : 'text-charcoal'
-                }`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className={`font-label uppercase text-sm tracking-wider hover:text-gold transition-colors ${isActive('/about') ? 'text-gold' : 'text-charcoal'
-                }`}
-            >
-              About
-            </Link>
-
-            {/* Services Dropdown */}
-            <div
-              className="relative group cursor-pointer"
-              onMouseEnter={() => setIsServicesDropdownOpen(true)}
-              onMouseLeave={() => setIsServicesDropdownOpen(false)}
-            >
-              <div className={`flex items-center gap-1 font-label uppercase text-sm tracking-wider hover:text-gold transition-colors py-2 ${isServiceActive ? 'text-gold' : 'text-charcoal'
-                }`}>
-                <Link to="/services">Services</Link>
-                <ChevronDown className="w-4 h-4" />
-              </div>
-
-              {/* Dropdown Menu */}
-              {isServicesDropdownOpen && (
-                <div className="absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-gold pt-2 pb-2 rounded-b-sm transform transition-all">
-                  {services.map((service) => (
-                    <Link
-                      key={service.id}
-                      to={service.slug}
-                      className="block px-4 py-3 text-sm text-charcoal hover:bg-off-white hover:text-gold transition-colors font-body"
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <Link
-              to="/blog"
-              className={`font-label uppercase text-sm tracking-wider hover:text-gold transition-colors ${isActive('/blog') ? 'text-gold' : 'text-charcoal'
-                }`}
-            >
-              Blog
-            </Link>
-
-            <Link
-              to="/contact"
-              className={`font-label uppercase text-sm tracking-wider hover:text-gold transition-colors ${isActive('/contact') ? 'text-gold' : 'text-charcoal'
-                }`}
-            >
-              Contact
-            </Link>
-
-            <StarBorder
-              as={Link}
-              to="/contact"
-              className="font-label px-6 py-2 text-sm uppercase tracking-wider"
-            >
-              Get a Quote
-            </StarBorder>
+    <>
+      {/* Floating Logo Bubble (Left) - Now wraps in glass container when scrolled */}
+      <div className={`fixed ${isScrolled ? 'top-3 bg-glass border border-gold/25 shadow-lg px-4 py-1.5 rounded-full backdrop-blur-xl' : 'top-5 bg-transparent border-transparent'} left-4 md:left-8 z-50 transition-all duration-300 flex items-center`}>
+        <Link to="/" className="flex items-center gap-3 bg-transparent hover:scale-105 transition-transform duration-300 group">
+          <img
+            src={logoImg}
+            alt="SKY Groups Logo"
+            className={`${isScrolled ? 'h-[40px] md:h-[52px]' : 'h-[52px] md:h-[64px]'} w-auto transition-all duration-300 group-hover:scale-110`}
+          />
+          <div className="flex flex-col justify-center">
+            <span className={`font-display font-bold leading-none text-gold tracking-widest transition-all duration-300 ${isScrolled ? 'text-lg md:text-2xl' : 'text-xl md:text-2xl'}`}>
+              SKY Groups
+            </span>
           </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`text-charcoal hover:text-gold transition-colors`}
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-            </button>
-          </div>
-        </div>
+        </Link>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Floating Navigation Pill (Center) - High-end Glass capsule */}
+      <div className={`hidden md:flex fixed ${isScrolled ? 'top-3 bg-glass shadow-xl border-gold/25' : 'top-5 bg-glass/85 border-gold/15 shadow-md'} left-1/2 -translate-x-1/2 z-50 transition-all duration-300 items-center backdrop-blur-xl border px-6 py-2.5 rounded-full gap-6 hover:border-gold/45`}>
+        <Link
+          to="/"
+          className={`font-label uppercase text-xs lg:text-sm tracking-widest hover:text-gold transition-colors duration-300 font-bold ${isActive('/') ? 'text-gold' : 'text-charcoal'
+            }`}
+        >
+          Home
+        </Link>
+        <Link
+          to="/about"
+          className={`font-label uppercase text-xs lg:text-sm tracking-widest hover:text-gold transition-colors duration-300 font-bold ${isActive('/about') ? 'text-gold' : 'text-charcoal'
+            }`}
+        >
+          About
+        </Link>
+
+        {/* Services Dropdown */}
+        <div
+          className="relative group cursor-pointer"
+          onMouseEnter={() => setIsServicesDropdownOpen(true)}
+          onMouseLeave={() => setIsServicesDropdownOpen(false)}
+        >
+          <div className={`flex items-center gap-1 font-label uppercase text-xs lg:text-sm tracking-widest hover:text-gold transition-colors duration-300 font-bold py-2 ${isServiceActive ? 'text-gold' : 'text-charcoal'
+            }`}>
+            <Link to="/services">Services</Link>
+            <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180 text-gold/80" />
+          </div>
+
+          {/* Dropdown Menu - Glass list */}
+          {isServicesDropdownOpen && (
+            <div className="absolute top-[120%] right-0 w-64 bg-glass backdrop-blur-xl shadow-2xl border border-gold/20 p-2.5 rounded-2xl animate-dropdown z-50">
+              {services.map((service) => (
+                <Link
+                  key={service.id}
+                  to={service.slug}
+                  className="block px-4 py-2.5 text-xs text-charcoal hover:bg-gold/10 hover:text-gold rounded-xl transition-all duration-300 font-bold uppercase tracking-wider"
+                >
+                  {service.name}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <Link
+          to="/blog"
+          className={`font-label uppercase text-xs lg:text-sm tracking-widest hover:text-gold transition-colors duration-300 font-bold ${isActive('/blog') ? 'text-gold' : 'text-charcoal'
+            }`}
+        >
+          Blog
+        </Link>
+
+        <Link
+          to="/contact"
+          className={`font-label uppercase text-xs lg:text-sm tracking-widest hover:text-gold transition-colors duration-300 font-bold ${isActive('/contact') ? 'text-gold' : 'text-charcoal'
+            }`}
+        >
+          Contact
+        </Link>
+
+        <StarBorder
+          as={Link}
+          to="/contact"
+          containerClassName="!rounded-full shadow-md"
+          className="!rounded-full px-5 py-1.5 text-xs uppercase tracking-widest font-bold"
+        >
+          Get a Quote
+        </StarBorder>
+      </div>
+
+      {/* Mobile Menu Toggle Bubble (Right) */}
+      <div className={`md:hidden fixed ${isScrolled ? 'top-3' : 'top-5'} right-4 z-50 transition-all duration-300`}>
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="bg-glass border border-gold/25 p-3 rounded-full shadow-lg flex items-center justify-center text-charcoal hover:text-gold transition-colors"
+          aria-label="Toggle mobile menu"
+        >
+          {isMobileMenuOpen ? <X className="w-5 h-5 text-gold" /> : <Menu className="w-5 h-5" />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Dropdown Drawer Card - Custom Glass layout */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-charcoal shadow-xl border-t border-gold/20 flex flex-col">
-          <Link to="/" className="px-6 py-4 text-white hover:text-gold border-b border-white/10 font-label uppercase text-sm">
+        <div className="md:hidden fixed top-20 right-4 left-4 z-40 bg-glass/95 backdrop-blur-xl border border-gold/25 p-6 rounded-2xl shadow-2xl flex flex-col gap-4 animate-drawer max-h-[calc(100vh-7rem)] overflow-y-auto">
+          <Link
+            to="/"
+            className={`px-4 py-3 rounded-xl hover:bg-gold/10 hover:text-gold font-label uppercase text-xs tracking-widest font-bold transition-colors ${isActive('/') ? 'text-gold bg-gold/5' : 'text-charcoal'}`}
+          >
             Home
           </Link>
-          <Link to="/about" className="px-6 py-4 text-white hover:text-gold border-b border-white/10 font-label uppercase text-sm">
+          <Link
+            to="/about"
+            className={`px-4 py-3 rounded-xl hover:bg-gold/10 hover:text-gold font-label uppercase text-xs tracking-widest font-bold transition-colors ${isActive('/about') ? 'text-gold bg-gold/5' : 'text-charcoal'}`}
+          >
             About
           </Link>
 
-          <div className="px-6 py-4 border-b border-white/10">
-            <div className="flex justify-between items-center text-white hover:text-gold font-label uppercase text-sm cursor-pointer" onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}>
-              <Link to="/services">Services</Link>
+          <div className="px-4 py-3 rounded-xl bg-gold/5 border border-gold/10">
+            <div
+              className="flex justify-between items-center text-charcoal hover:text-gold font-label uppercase text-xs tracking-widest font-bold cursor-pointer"
+              onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+            >
+              <span className={isServiceActive ? 'text-gold' : ''}>Services</span>
               <ChevronDown className={`w-4 h-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
             </div>
             {isServicesDropdownOpen && (
-              <div className="mt-4 flex flex-col pl-4 border-l border-gold/30">
+              <div className="mt-3 flex flex-col gap-2 pl-4 border-l-2 border-gold/20">
+                <Link
+                  to="/services"
+                  className="py-2 text-charcoal hover:text-gold text-xs font-label uppercase tracking-widest font-bold"
+                >
+                  All Services
+                </Link>
                 {services.map((service) => (
                   <Link
                     key={service.id}
                     to={service.slug}
-                    className="py-2 text-white/80 hover:text-gold text-sm font-body"
+                    className="py-2 text-grey-text hover:text-gold text-xs font-bold uppercase tracking-wider transition-colors"
                   >
                     {service.name}
                   </Link>
@@ -155,24 +166,31 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link to="/blog" className="px-6 py-4 text-white hover:text-gold border-b border-white/10 font-label uppercase text-sm">
+          <Link
+            to="/blog"
+            className={`px-4 py-3 rounded-xl hover:bg-gold/10 hover:text-gold font-label uppercase text-xs tracking-widest font-bold transition-colors ${isActive('/blog') ? 'text-gold bg-gold/5' : 'text-charcoal'}`}
+          >
             Blog
           </Link>
-          <Link to="/contact" className="px-6 py-4 text-white hover:text-gold border-b border-white/10 font-label uppercase text-sm">
+          <Link
+            to="/contact"
+            className={`px-4 py-3 rounded-xl hover:bg-gold/10 hover:text-gold font-label uppercase text-xs tracking-widest font-bold transition-colors ${isActive('/contact') ? 'text-gold bg-gold/5' : 'text-charcoal'}`}
+          >
             Contact
           </Link>
-          <div className="p-6">
+
+          <div className="pt-2">
             <StarBorder
               as={Link}
               to="/contact"
-              containerClassName="w-full block"
-              className="font-label py-3 text-sm uppercase tracking-wider transition-colors"
+              containerClassName="w-full !rounded-full shadow-lg"
+              className="font-label py-3 text-xs uppercase tracking-widest font-bold !rounded-full transition-colors"
             >
               Get a Quote
             </StarBorder>
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 }

@@ -7,6 +7,7 @@ import SectionHeading from '../components/ui/SectionHeading';
 import ServiceCard from '../components/ui/ServiceCard';
 import CTABanner from '../components/ui/CTABanner';
 import { services } from '../data/services';
+import servicesHeroImg from '../assets/Gemini_Generated_Image_vslrdjvslrdjvslr.png';
 
 export default function Services() {
   return (
@@ -19,7 +20,7 @@ export default function Services() {
       <HeroSection
         heading="What We Offer"
         subheading="A comprehensive suite of premium services designed to elevate your business and lifestyle."
-        bgImage="https://picsum.photos/1920/1080?random=20"
+        bgImage={servicesHeroImg}
         fullHeight={false}
       />
 
@@ -48,7 +49,7 @@ export default function Services() {
               }
             }}
           >
-            {services.map((service) => (
+            {services.map((service, index) => (
               <motion.div
                 key={service.id}
                 variants={{
@@ -61,6 +62,7 @@ export default function Services() {
                   name={service.name}
                   shortDesc={service.shortDesc}
                   slug={service.slug}
+                  index={index}
                 />
               </motion.div>
             ))}

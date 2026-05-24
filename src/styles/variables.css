@@ -9,4 +9,13 @@
   --charcoal:    #1A1A1A;
   --grey-text:   #4A4A4A;
   --border:      #E8E0D0;
+  
+  /* Premium Luxury Design Tokens */
+  --obsidian-dark:   #0B0B0C;
+  --obsidian-light:  #161618;
+  --gold-glimmer:    rgba(212, 160, 23, 0.15);
+  --champagne-gold:  #FAF2E6;
+  --glass-bg:        rgba(255, 255, 255, 0.70);
+  --glass-border:    rgba(212, 160, 23, 0.18);
+  --glass-shadow:    rgba(160, 120, 16, 0.08);
 }

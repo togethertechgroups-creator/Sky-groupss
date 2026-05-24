@@ -93,7 +93,7 @@ export default function BlogPost() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
           {/* Article Body */}
-          <div className="bg-white p-8 md:p-12 rounded-sm shadow-xl border border-border">
+          <div className="bg-white p-5 sm:p-8 md:p-12 rounded-sm shadow-xl border border-border">
             {/* 
               Global styles for HTML content generated via string 
               We use standard tailwind typography via a wrapper class 

@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer';
 import WhatsAppButton from './components/layout/WhatsAppButton';
 import ScrollToTop from './components/layout/ScrollToTop';
 import PageLoader from './components/ui/PageLoader';
+import SplashCursor from './components/ui/SplashCursor';
 
 // Top-level Pages (Lazy Loaded)
 const Home = lazy(() => import('./pages/Home'));
@@ -31,11 +32,12 @@ const BlogPost = lazy(() => import('./pages/BlogPost'));
 function App() {
   return (
     <Router>
+      <SplashCursor />
       <ScrollToTop />
       <div className="flex flex-col min-h-screen font-body text-charcoal bg-off-white">
         <Navbar />
         
-        <main className="flex-grow pt-24">
+        <main className="flex-grow">
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Home />} />
