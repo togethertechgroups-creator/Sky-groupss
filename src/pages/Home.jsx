@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       <SEOHead
-        title="SKY A Groups | Multi-Service Business Tamil Nadu"
+        title="Sky Groups Pvt Ltd -Tamilnadu"
         description="SKY A Groups offers property, construction, car sales, uniforms, events & web design across Tamil Nadu. Call S.S. Ponnarasan: 9941888840."
         schema={{
           "@context": "https://schema.org",

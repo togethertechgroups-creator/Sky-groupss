@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import JsonLd from './JsonLd';
 
 export default function SEOHead({
-  title = "SKY Groups",
+  title = "Sky Groups Pvt Ltd -Tamilnadu",
   description = "A premium multi-service organization based in Tamil Nadu.",
   canonical = "https://www.skygroupss.in",
   ogImage = "/og-image.jpg",
