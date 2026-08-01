@@ -25,8 +25,8 @@ export default defineConfig({
       output: {
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
-          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei'],
-          'vendor-ui': ['framer-motion', 'lucide-react'],
+          'vendor-animation': ['framer-motion', 'gsap'],
+          'vendor-ui': ['lucide-react'],
         },
       },
     },

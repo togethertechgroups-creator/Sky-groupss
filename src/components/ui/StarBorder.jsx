@@ -4,25 +4,62 @@ const StarBorder = ({
   as: Component = 'button',
   className = '',
   containerClassName = '',
-  color = '#D4A017', 
+  color = 'var(--color-gold-primary)', 
   speed = '4s',
   children,
+  style = {},
   ...props
 }) => {
   return (
-    <Component className={`relative inline-flex overflow-hidden rounded-sm p-[2px] group cursor-pointer ${containerClassName}`} {...props}>
+    <Component 
+      style={{
+        position: 'relative',
+        display: 'inline-flex',
+        overflow: 'hidden',
+        padding: '2px',
+        cursor: 'pointer',
+        border: 'var(--border-brutal-width) solid var(--color-charcoal)',
+        borderRadius: 'var(--radius-card)',
+        boxShadow: 'var(--shadow-brutal)',
+        transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+        ...style
+      }}
+      className={`group ${containerClassName}`} 
+      {...props}
+    >
       <span 
-        className="absolute z-0 animate-spin" 
+        className="animate-spin-slow" 
         style={{
+          position: 'absolute',
+          zIndex: 0,
           width: '500%',
           height: '500%',
           top: '-200%',
           left: '-200%',
-          background: `conic-gradient(from 90deg at 50% 50%, transparent 0%, transparent 80%, ${color === 'magenta' ? '#D4A017' : color} 100%)`,
+          background: `conic-gradient(from 90deg at 50% 50%, transparent 0%, transparent 80%, var(--color-gold-primary) 100%)`,
           animationDuration: speed
         }}
       />
-      <span className={`relative z-10 flex h-full w-full items-center justify-center bg-charcoal rounded-[2px] transition-all duration-300 group-hover:bg-[#222] text-white ${className}`}>
+      <span 
+        style={{
+          position: 'relative',
+          zIndex: 10,
+          display: 'flex',
+          height: '100%',
+          width: '100%',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: 'var(--color-charcoal)',
+          color: 'var(--color-gold-light)',
+          fontFamily: 'var(--font-label)',
+          fontWeight: 700,
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em',
+          borderRadius: 'calc(var(--radius-card) - 2px)',
+          transition: 'all 0.2s ease'
+        }}
+        className={className}
+      >
         {children}
       </span>
     </Component>

@@ -1,16 +1,14 @@
 import React from 'react';
 import ServicePageLayout from '../../components/layout/ServicePageLayout';
-import SplashCursor from '../../components/ui/SplashCursor';
 import webDesignImg from '../../assets/1687.jpg.jpeg';
-import webDesignHero from '../../assets/web-hero.jpg';
+import heroWebImg from '../../assets/hero_web_design.png';
 
 export default function WebDesign() {
   return (
     <>
-      <SplashCursor />
       <ServicePageLayout
         serviceId="web-design"
-        heroImage={webDesignHero}
+        heroImage={heroWebImg}
         introImage={webDesignImg}
         schema={{
           "@context": "https://schema.org",

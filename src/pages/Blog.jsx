@@ -10,10 +10,8 @@ import postsData from '../data/blog-posts.json';
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState('All');
 
-  // Extract unique categories
   const categories = ['All', ...new Set(postsData.map(post => post.category))];
 
-  // Filter posts
   const filteredPosts = activeCategory === 'All'
     ? postsData
     : postsData.filter(post => post.category === activeCategory);
@@ -34,19 +32,30 @@ export default function Blog() {
 
       <BreadCrumb crumbs={[{ label: 'Home', path: '/' }, { label: 'Blog', path: '/blog' }]} />
 
-      <section className="py-16 bg-off-white min-h-[50vh]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section style={{ padding: '4rem 0', backgroundColor: 'var(--color-off-white)' }} data-section-theme="cream">
+        <div className="container">
 
           {/* Category Filters */}
-          <div className="flex flex-wrap gap-3.5 mb-14 justify-center md:justify-start">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '3rem', justifyContent: 'center' }}>
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`font-label text-xs uppercase tracking-widest px-6 py-2.5 rounded-full transition-all duration-300 font-bold ${activeCategory === cat
-                    ? 'bg-gradient-to-r from-gold to-orange text-white shadow-[0_8px_20px_rgba(212,160,23,0.22)] border border-transparent'
-                    : 'bg-glass border border-gold/15 text-charcoal/80 hover:border-gold/45 hover:text-gold shadow-sm'
-                  }`}
+                style={{
+                  padding: '0.5rem 1.5rem',
+                  borderRadius: 'var(--radius-pill)',
+                  fontFamily: 'var(--font-label)',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  cursor: 'pointer',
+                  border: 'var(--border-brutal-width) solid var(--color-charcoal)',
+                  backgroundColor: activeCategory === cat ? 'var(--color-gold-primary)' : 'var(--color-white)',
+                  color: activeCategory === cat ? 'var(--color-charcoal)' : 'var(--color-charcoal)',
+                  boxShadow: activeCategory === cat ? 'var(--shadow-brutal-gold)' : 'var(--shadow-brutal)',
+                  transition: 'all 0.2s ease'
+                }}
               >
                 {cat}
               </button>
@@ -66,45 +75,38 @@ export default function Blog() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4 }}
-                  whileHover={{ y: -8, scale: 1.02 }}
+                  whileHover={{ y: -8, rotate: 2 }}
                   key={post.slug}
-                  className="bg-gradient-to-br from-white/95 to-champagne-gold/25 p-8 rounded-2xl transition-all duration-500 relative group overflow-hidden flex flex-col h-full border border-gold/15 hover:border-gold/35 shadow-[0_10px_30px_-15px_rgba(160,120,16,0.06)] hover:shadow-[0_20px_50px_rgba(212,160,23,0.18)] cursor-pointer"
+                  className="card-brutal"
+                  style={{ padding: '2rem', display: 'flex', flexDirection: 'column', height: '100%' }}
                 >
-                  {/* Luxury Metallic Glare Sweep Overlay */}
-                  <div className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none z-20"></div>
-
-                  {/* Dynamic Gold Gradient Border Accent */}
-                  <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-gold via-gold-light to-gold-dark transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out origin-top z-10"></div>
-
-                  <span className="bg-gold/10 text-gold border border-gold/25 font-label text-[10px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full w-fit mb-5 relative z-10 transition-colors duration-300 group-hover:bg-gold/20">
+                  <span className="pill-badge" style={{ width: 'fit-content', marginBottom: '1.25rem', fontSize: '0.65rem' }}>
                     {post.category}
                   </span>
 
-                  <h2 className="font-heading font-bold text-2xl text-charcoal mb-4 group-hover:text-gold transition-colors line-clamp-2 relative z-10 leading-snug">
+                  <h2 style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.35rem', color: 'var(--color-charcoal)', marginBottom: '1rem', lineHeight: 1.3 }}>
                     {post.title}
                   </h2>
 
-                  <p className="font-body text-grey-text mb-6 flex-grow line-clamp-3 relative z-10 leading-relaxed group-hover:text-charcoal transition-colors">
+                  <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-grey-text)', marginBottom: '1.5rem', flexGrow: 1, lineHeight: 1.6 }}>
                     {post.excerpt}
                   </p>
 
-                  <div className="flex justify-between items-center border-t border-gold/10 group-hover:border-gold/20 pt-4 mt-auto transition-colors duration-500 relative z-10">
-                    <div className="flex flex-col">
-                      <span className="font-body text-charcoal font-bold text-sm">{post.author}</span>
-                      <div className="flex items-center gap-1.5 text-grey-text/70 text-[10px] md:text-xs font-bold font-label uppercase tracking-wider mt-0.5">
-                        <Calendar className="w-3.5 h-3.5 text-gold" />
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--color-border)', paddingTop: '1rem', marginTop: 'auto' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <span style={{ fontFamily: 'var(--font-body)', color: 'var(--color-charcoal)', fontWeight: 700, fontSize: '0.85rem' }}>{post.author}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--color-grey-text)', fontSize: '0.75rem', fontFamily: 'var(--font-label)', fontWeight: 700 }}>
+                        <Calendar style={{ width: '0.85rem', height: '0.85rem', color: 'var(--color-gold-primary)' }} />
                         <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} • {post.readTime}</span>
                       </div>
                     </div>
 
                     <Link
                       to={`/blog/${post.slug}`}
-                      className="inline-flex items-center font-label text-xs uppercase tracking-widest text-gold group-hover:text-orange transition-colors font-bold"
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', fontFamily: 'var(--font-label)', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-gold-dark)' }}
                     >
                       <span>Read Article</span>
-                      <div className="ml-2 w-5 h-5 rounded-full bg-gold/5 group-hover:bg-gold/10 flex items-center justify-center transition-colors">
-                        <ChevronRight className="w-3.5 h-3.5 text-gold group-hover:translate-x-0.5 group-hover:text-orange transition-all" />
-                      </div>
+                      <ChevronRight style={{ width: '1rem', height: '1rem' }} />
                     </Link>
                   </div>
                 </motion.div>
@@ -113,11 +115,12 @@ export default function Blog() {
           </motion.div>
 
           {filteredPosts.length === 0 && (
-            <div className="text-center py-20">
-              <h3 className="font-heading text-xl text-grey-text">No articles found in this category.</h3>
+            <div style={{ textAlign: 'center', padding: '5rem 0' }}>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', color: 'var(--color-grey-text)' }}>No articles found in this category.</h3>
               <button
                 onClick={() => setActiveCategory('All')}
-                className="mt-4 text-gold border-b border-gold font-label uppercase text-sm tracking-wider"
+                className="pill-badge"
+                style={{ marginTop: '1rem' }}
               >
                 Clear Filter
               </button>

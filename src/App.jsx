@@ -1,5 +1,7 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Layout & Global Components
 import Navbar from './components/layout/Navbar';
@@ -7,7 +9,9 @@ import Footer from './components/layout/Footer';
 import WhatsAppButton from './components/layout/WhatsAppButton';
 import ScrollToTop from './components/layout/ScrollToTop';
 import PageLoader from './components/ui/PageLoader';
-import SplashCursor from './components/ui/SplashCursor';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 // Top-level Pages (Lazy Loaded)
 const Home = lazy(() => import('./pages/Home'));
@@ -30,14 +34,50 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 
 function App() {
+  /* GSAP ScrollTrigger Lightweight Theme Shift Controller */
+  useEffect(() => {
+    const mm = gsap.matchMedia();
+    
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      const timer = setTimeout(() => {
+        const sections = document.querySelectorAll('[data-section-theme]');
+        
+        sections.forEach((section) => {
+          const theme = section.getAttribute('data-section-theme');
+          ScrollTrigger.create({
+            trigger: section,
+            start: 'top 55%',
+            end: 'bottom 45%',
+            onEnter: () => {
+              if (document.documentElement.getAttribute('data-section-theme') !== theme) {
+                document.documentElement.setAttribute('data-section-theme', theme);
+              }
+            },
+            onEnterBack: () => {
+              if (document.documentElement.getAttribute('data-section-theme') !== theme) {
+                document.documentElement.setAttribute('data-section-theme', theme);
+              }
+            }
+          });
+        });
+      }, 150);
+
+      return () => clearTimeout(timer);
+    });
+
+    return () => {
+      mm.revert();
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, []);
+
   return (
     <Router>
-      <SplashCursor />
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen font-body text-charcoal bg-off-white">
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
         
-        <main className="flex-grow">
+        <main style={{ flexGrow: 1 }}>
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Home />} />

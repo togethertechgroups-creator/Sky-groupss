@@ -1,13 +1,13 @@
 import React from 'react';
 import ServicePageLayout from '../../components/layout/ServicePageLayout';
-import eventHeroImg from '../../assets/event-management-hero.jpg';
+import heroEventImg from '../../assets/hero_event_management.png';
 import eventWhatWeDoImg from '../../assets/event-management-whatwedo.jpg';
 
 export default function EventManagement() {
   return (
     <ServicePageLayout
       serviceId="event-management"
-      heroImage={eventHeroImg}
+      heroImage={heroEventImg}
       introImage={eventWhatWeDoImg}
       schema={{
         "@context": "https://schema.org",

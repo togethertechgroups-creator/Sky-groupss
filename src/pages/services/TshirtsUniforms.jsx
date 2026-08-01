@@ -1,13 +1,13 @@
 import React from 'react';
 import ServicePageLayout from '../../components/layout/ServicePageLayout';
 import uniformImg from '../../assets/school-unifor.jpg';
-import tshirtHeroImg from '../../assets/tshirt-hero.webp';
+import heroUniformsImg from '../../assets/hero_tshirts_uniforms.png';
 
 export default function TshirtsUniforms() {
   return (
     <ServicePageLayout
       serviceId="tshirts-uniforms"
-      heroImage={tshirtHeroImg}
+      heroImage={heroUniformsImg}
       introImage={uniformImg}
       schema={{
         "@context": "https://schema.org",

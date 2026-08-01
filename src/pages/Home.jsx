@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SEOHead from '../components/seo/SEOHead';
 import HeroSection from '../components/ui/HeroSection';
 import SectionHeading from '../components/ui/SectionHeading';
@@ -14,18 +16,122 @@ import { SOCIAL_LINKS } from '../data/social';
 import { testimonials } from '../data/testimonials';
 import postsData from '../data/blog-posts.json';
 import { Shield, Star, Heart, Calendar, ChevronRight } from 'lucide-react';
-import homeHeroImg from '../assets/Business ecosystem with modern elements.png';
+import homeHeroImg from '../assets/hero_home.png';
 import legacyImg from '../assets/rishi-sreekar-aqEhniwDOIU-unsplash.jpg';
 import AnimatedImage from '../components/ui/AnimatedImage';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const pillarsRef = useRef(null);
+  const statsRef = useRef(null);
+  const servicesGridRef = useRef(null);
+  const blogGridRef = useRef(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
+  }, []);
+
+  /* GSAP ScrollTrigger Stacked Card Peel Sequences */
+  useEffect(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      // 1. Stat Counters Peel Sequence
+      if (statsRef.current) {
+        gsap.fromTo(statsRef.current.children,
+          { opacity: 0, y: 50, scale: 0.88, rotate: -3 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotate: 0,
+            stagger: 0.12,
+            duration: 0.7,
+            ease: "back.out(1.4)",
+            scrollTrigger: {
+              trigger: statsRef.current,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+
+      // 2. Services Showcase Grid Stacked Peel Timeline
+      if (servicesGridRef.current) {
+        const cards = servicesGridRef.current.children;
+        gsap.fromTo(cards,
+          { opacity: 0, y: 70, rotate: (i) => (i % 2 === 0 ? -4 : 4), scale: 0.9 },
+          {
+            opacity: 1,
+            y: 0,
+            rotate: 0,
+            scale: 1,
+            stagger: 0.12,
+            duration: 0.75,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: servicesGridRef.current,
+              start: "top 80%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+
+      // 3. Why Us Pillars Stacked Peel Timeline
+      if (pillarsRef.current) {
+        const pillarCards = pillarsRef.current.querySelectorAll('.pillar-card-peel');
+        gsap.fromTo(pillarCards, 
+          { y: 80, opacity: 0, rotate: (i) => (i % 2 === 0 ? -5 : 5), scale: 0.9 },
+          {
+            y: 0,
+            opacity: 1,
+            rotate: 0,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "back.out(1.5)",
+            scrollTrigger: {
+              trigger: pillarsRef.current,
+              start: "top 78%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+
+      // 4. Blog Preview Cards Stacked Peel Timeline
+      if (blogGridRef.current) {
+        const blogCards = blogGridRef.current.children;
+        gsap.fromTo(blogCards,
+          { opacity: 0, y: 60, rotate: -3, scale: 0.92 },
+          {
+            opacity: 1,
+            y: 0,
+            rotate: 0,
+            scale: 1,
+            stagger: 0.14,
+            duration: 0.7,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: blogGridRef.current,
+              start: "top 82%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+    });
+
+    return () => {
+      mm.revert();
+    };
   }, []);
 
   const recentPosts = postsData.slice(0, 3);
@@ -87,20 +193,35 @@ export default function Home() {
         secondaryCtaText="WhatsApp Us"
         secondaryCtaLink={SOCIAL_LINKS.whatsapp}
         fullHeight={true}
+        enableCategoryRotator={true}
+        trustBadges={[
+          { title: "15+ Years Exp" },
+          { title: "500+ Clients" },
+          { title: "200+ Projects" }
+        ]}
       />
 
       {/* About Strip */}
-      <section className="py-24 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section style={{ padding: '3.5rem 0', backgroundColor: 'var(--color-white)', position: 'relative' }} data-section-theme="light">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              style={{ width: '100%', maxWidth: '28rem', margin: '0 auto' }}
             >
-              <div className="aspect-square bg-gray-200 relative overflow-hidden rounded-sm">
+              <div 
+                style={{
+                  position: 'relative',
+                  border: 'var(--border-brutal-width) solid var(--color-charcoal)',
+                  borderRadius: 'var(--radius-card)',
+                  boxShadow: 'var(--shadow-brutal-hover)',
+                  overflow: 'hidden',
+                  aspectRatio: '4/3'
+                }}
+              >
                 <AnimatedImage
                   src={legacyImg}
                   alt="SKY Groups Legacy — SKY Groups"
@@ -110,32 +231,59 @@ export default function Home() {
                   kenBurns={true}
                   shimmer={true}
                   width="600"
-                  height="600"
+                  height="450"
                 />
-                <div className="absolute inset-0 bg-gold/10 pointer-events-none"></div>
               </div>
-              <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-charcoal text-gold flex flex-col justify-center items-center rounded-sm shadow-2xl p-6 hidden md:flex border-t-4 border-gold">
-                <span className="font-display font-bold text-5xl mb-2">15+</span>
-                <span className="font-label text-xs uppercase tracking-widest text-center">Years of Trust</span>
+              
+              {/* Brutal Story Pill Badge */}
+              <div 
+                style={{
+                  marginTop: '1rem',
+                  backgroundColor: 'var(--color-charcoal)',
+                  color: 'var(--color-gold-light)',
+                  border: 'var(--border-brutal-width) solid var(--color-gold-primary)',
+                  boxShadow: 'var(--shadow-brutal-gold)',
+                  borderRadius: 'var(--radius-card)',
+                  padding: '0.75rem 1.25rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '1rem'
+                }}
+              >
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', lineHeight: 1 }}>15+</span>
+                <span style={{ fontFamily: 'var(--font-label)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 700 }}>Years of Trust</span>
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              style={{ minWidth: 0 }}
             >
-              <h2 className="font-display font-bold text-4xl mb-6 text-charcoal">A Legacy of Excellence in Tamil Nadu</h2>
-              <div className="h-0.5 w-16 bg-gold mb-8"></div>
-              <p className="font-body text-grey-text text-lg leading-relaxed mb-6">
+              <h2 className="text-section-title" style={{ marginBottom: '1rem', textTransform: 'uppercase', color: 'var(--color-charcoal)' }}>
+                A Legacy of Excellence in Tamil Nadu
+              </h2>
+              <div style={{ height: '4px', width: '4rem', backgroundColor: 'var(--color-gold-primary)', marginBottom: '1.5rem', boxShadow: '2px 2px 0px var(--color-charcoal)' }}></div>
+              
+              <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-grey-text)', fontSize: '1.08rem', lineHeight: 1.65, marginBottom: '1rem' }}>
                 Founded by S.S. Ponnarasan, SKY Groups has grown into a versatile powerhouse supporting individuals and businesses across Tamil Nadu. We don't just provide services; we build long-term relationships through unwavering integrity.
               </p>
-              <p className="font-body text-grey-text text-lg leading-relaxed mb-12">
+              <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-grey-text)', fontSize: '1.08rem', lineHeight: 1.65, marginBottom: '1.75rem' }}>
                 Whether you're investing in property, constructing a home, buying a vehicle, or scaling your digital presence, we deliver premium solutions tailored to your success.
               </p>
 
-              <div className="grid grid-cols-3 gap-2 sm:gap-6 border-t border-border pt-8">
+              {/* Stat Counters with GSAP Peel Trigger */}
+              <div 
+                ref={statsRef}
+                className="grid grid-cols-3 gap-4"
+                style={{
+                  borderTop: '2px solid var(--color-border)',
+                  paddingTop: '1.5rem'
+                }}
+              >
                 <AnimatedCounter target="15" suffix="+" label="Years Exp" />
                 <AnimatedCounter target="500" suffix="+" label="Clients" />
                 <AnimatedCounter target="200" suffix="+" label="Projects" />
@@ -146,8 +294,8 @@ export default function Home() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-off-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section style={{ padding: '3.5rem 0', backgroundColor: 'var(--color-off-white)' }} data-section-theme="cream">
+        <div className="container">
           <SectionHeading
             title="Our Premium Services"
             subtitle="Explore our diverse, high-quality offerings designed to meet all your personal and corporate needs."
@@ -155,27 +303,13 @@ export default function Home() {
             centered={true}
           />
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.1 }
-              }
-            }}
+          <div
+            ref={servicesGridRef}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            style={{ marginTop: '2rem' }}
           >
             {services.map((service, index) => (
-              <motion.div
-                key={service.id}
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-              >
+              <div key={service.id}>
                 <ServiceCard
                   icon={service.icon}
                   name={service.name}
@@ -183,99 +317,114 @@ export default function Home() {
                   slug={service.slug}
                   index={index}
                 />
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Why Us Pillars */}
-      <section className="py-24 bg-charcoal text-white relative diagonal-cut-top diagonal-cut-bottom my-12 overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(#D4A017 1px, transparent 1px), linear-gradient(90deg, #D4A017 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-
-        {/* Floating ambient orbs */}
-        <div className="absolute top-10 left-10 w-6 h-6 rounded-full bg-gold/20 blur-md animate-float-up" style={{ animationDelay: '0s' }}></div>
-        <div className="absolute top-24 right-20 w-4 h-4 rounded-full bg-orange/20 blur-md animate-float-up" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute bottom-16 left-1/3 w-3 h-3 rounded-full bg-gold/30 animate-float-up" style={{ animationDelay: '0.8s' }}></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Why Us Pillars (GSAP ScrollTrigger Stacked Card Peel) */}
+      <section 
+        style={{ padding: '3.5rem 0', backgroundColor: 'var(--color-charcoal)', color: 'var(--color-white)', position: 'relative', overflow: 'hidden' }} 
+        data-section-theme="dark"
+      >
+        <div className="container">
           <SectionHeading
             title="Why Choose SKY Groups"
             centered={true}
             light={true}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
+          <div ref={pillarsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ marginTop: '2rem' }}>
             {[
               { icon: Shield, title: 'Unwavering Trust', desc: 'Every transaction is backed by complete transparency, legal clarity, and ethical business practices.' },
               { icon: Star, title: 'Premium Quality', desc: 'From construction materials to web code, we never compromise on delivering the highest grade of excellence.' },
               { icon: Heart, title: 'Client First', desc: 'We prioritize your vision. S.S. Ponnarasan ensures personal attention is given to every major project.' }
             ].map((pillar, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="flex flex-col items-center text-center p-8 border border-white/10 rounded-2xl hover:border-gold/40 transition-all duration-500 bg-white/5 backdrop-blur-sm hover:bg-white/8 hover:shadow-[0_20px_60px_rgba(212,160,23,0.12)] group"
+                className="pillar-card-peel card-brutal-gold"
+                style={{
+                  padding: '2rem 1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  textAlign: 'center'
+                }}
               >
-                {/* Icon with spinning rings */}
-                <div className="relative w-20 h-20 flex items-center justify-center mb-6">
-                  {/* Outer spinning ring */}
-                  <div className="absolute inset-0 rounded-full border border-dashed border-gold/20 animate-spin-slow"></div>
-                  {/* Inner counter-spin ring */}
-                  <div className="absolute inset-2 rounded-full border border-dashed border-gold/10 animate-spin-reverse"></div>
-                  {/* Icon circle */}
-                  <div className="w-14 h-14 bg-gradient-to-br from-gold to-orange-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(212,160,23,0.3)] group-hover:shadow-[0_0_35px_rgba(212,160,23,0.5)] transition-shadow duration-500 animate-glow-pulse">
-                    <pillar.icon className="w-7 h-7 text-white" />
-                  </div>
+                <div 
+                  style={{
+                    width: '3.75rem',
+                    height: '3.75rem',
+                    backgroundColor: 'var(--color-gold-primary)',
+                    borderRadius: 'var(--radius-card)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '1.25rem',
+                    color: 'var(--color-charcoal)',
+                    boxShadow: '3px 3px 0px var(--color-white)'
+                  }}
+                >
+                  <pillar.icon style={{ width: '2rem', height: '2rem' }} />
                 </div>
-                <h3 className="font-heading text-2xl font-bold mb-4 group-hover:text-gold transition-colors duration-300">{pillar.title}</h3>
-                <p className="font-body text-white/70 leading-relaxed group-hover:text-white/90 transition-colors duration-300">{pillar.desc}</p>
-              </motion.div>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.35rem', color: 'var(--color-gold-light)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>{pillar.title}</h3>
+                <p style={{ fontFamily: 'var(--font-body)', color: 'rgba(255, 255, 255, 0.88)', lineHeight: 1.6, fontSize: '0.98rem' }}>{pillar.desc}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section style={{ padding: '3.5rem 0', backgroundColor: 'var(--color-white)' }} data-section-theme="light">
+        <div className="container">
           <SectionHeading
             title="Client Success Stories"
             centered={true}
           />
 
-          <div className="relative max-w-4xl mx-auto mt-12 bg-off-white p-12 rounded-sm shadow-lg border-t-4 border-gold">
-            <div className="absolute top-8 left-8 text-gold opacity-20">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" /></svg>
-            </div>
-
+          <div 
+            className="card-brutal"
+            style={{
+              maxWidth: '52rem',
+              margin: '2rem auto 0 auto',
+              padding: '2rem 2rem',
+              position: 'relative'
+            }}
+          >
             <motion.div
               key={currentTestimonial}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.5 }}
-              className="relative z-10 text-center px-4"
+              style={{ textAlign: 'center', position: 'relative', zIndex: 10 }}
             >
-              <p className="font-body text-xl md:text-2xl text-grey-text italic leading-relaxed mb-8">
+              <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1.2rem', color: 'var(--color-charcoal)', fontStyle: 'italic', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                 "{testimonials[currentTestimonial].quote}"
               </p>
-              <div className="flex flex-col items-center">
-                <span className="font-heading font-bold text-xl text-charcoal">{testimonials[currentTestimonial].name}</span>
-                <span className="font-label uppercase text-gold text-xs tracking-widest mt-1">{testimonials[currentTestimonial].service}</span>
-                <span className="font-body text-grey-text/70 text-sm mt-1">{testimonials[currentTestimonial].location}</span>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.15rem', color: 'var(--color-charcoal)' }}>{testimonials[currentTestimonial].name}</span>
+                <span className="pill-badge" style={{ marginTop: '0.35rem', fontSize: '0.68rem' }}>{testimonials[currentTestimonial].service}</span>
+                <span style={{ fontFamily: 'var(--font-body)', color: 'var(--color-grey-text)', fontSize: '0.85rem', marginTop: '0.25rem' }}>{testimonials[currentTestimonial].location}</span>
               </div>
             </motion.div>
 
-            <div className="flex justify-center gap-2 mt-10">
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1.75rem' }}>
               {testimonials.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentTestimonial(idx)}
-                  className={`w-3 h-3 rounded-full transition-all ${idx === currentTestimonial ? 'bg-gold w-8' : 'bg-border'}`}
+                  style={{
+                    width: idx === currentTestimonial ? '1.75rem' : '0.65rem',
+                    height: '0.65rem',
+                    borderRadius: 'var(--radius-pill)',
+                    backgroundColor: idx === currentTestimonial ? 'var(--color-gold-primary)' : 'var(--color-border)',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
                   aria-label={`Go to testimonial ${idx + 1}`}
                 />
               ))}
@@ -285,81 +434,72 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section style={{ padding: '3.5rem 0', backgroundColor: 'var(--color-white)' }} data-section-theme="light">
+        <div className="container-narrow">
           <SectionHeading
             title="Frequently Asked Questions"
             subtitle="Common queries about our services, process, and commitment to you."
             centered={true}
           />
-          <div className="mt-12">
+          <div style={{ marginTop: '2rem' }}>
             <FAQAccordion faqs={faqs.general} />
           </div>
         </div>
       </section>
 
       {/* Blog Preview */}
-      <section className="py-24 bg-off-white border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-12">
+      <section style={{ padding: '3.5rem 0', backgroundColor: 'var(--color-off-white)', borderTop: '2px solid var(--color-border)' }} data-section-theme="cream">
+        <div className="container">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem' }}>
             <SectionHeading
               title="Latest Insights"
               subtitle="Expert advice on property, business, and events."
               prefix="EXPERT INSIGHTS"
             />
-            <Link to="/blog" className="hidden md:inline-flex items-center gap-1.5 font-label text-gold hover:text-orange uppercase tracking-widest text-xs font-bold pb-1.5 border-b border-gold/20 hover:border-orange transition-all mb-12 duration-300">
+            <Link 
+              to="/blog" 
+              className="pill-badge hidden md:inline-flex"
+            >
               View All Articles →
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div ref={blogGridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {recentPosts.map((post, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-gradient-to-br from-white/95 to-champagne-gold/25 p-8 rounded-2xl transition-all duration-500 relative group overflow-hidden flex flex-col h-full border border-gold/15 hover:border-gold/35 shadow-[0_10px_30px_-15px_rgba(160,120,16,0.06)] hover:shadow-[0_20px_50px_rgba(212,160,23,0.18)] cursor-pointer"
+                className="card-brutal"
+                style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', height: '100%' }}
               >
-                {/* Luxury Metallic Glare Sweep Overlay */}
-                <div className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none z-20"></div>
-
-                {/* Dynamic Gold Gradient Border Accent */}
-                <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-gold via-gold-light to-gold-dark transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out origin-top z-10"></div>
-
-                <span className="bg-gold/10 text-gold border border-gold/25 font-label text-[10px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full w-fit mb-5 relative z-10 transition-colors duration-300 group-hover:bg-gold/20">
+                <span className="pill-badge" style={{ width: 'fit-content', marginBottom: '1rem', fontSize: '0.65rem' }}>
                   {post.category}
                 </span>
                 
-                <h3 className="font-heading font-bold text-2xl text-charcoal mb-4 group-hover:text-gold transition-colors duration-300 relative z-10 leading-snug">
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.25rem', color: 'var(--color-charcoal)', marginBottom: '0.75rem', lineHeight: 1.3 }}>
                   {post.title}
                 </h3>
                 
-                <p className="font-body text-grey-text mb-6 flex-grow group-hover:text-charcoal transition-colors duration-300 relative z-10 leading-relaxed">
+                <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-grey-text)', marginBottom: '1.25rem', flexGrow: 1, lineHeight: 1.55, fontSize: '0.95rem' }}>
                   {post.excerpt}
                 </p>
                 
-                <div className="flex justify-between items-center border-t border-gold/10 group-hover:border-gold/20 pt-4 mt-auto transition-colors duration-500 relative z-10">
-                  <div className="flex items-center gap-1.5 text-grey-text/75 text-xs font-bold font-label uppercase tracking-wider">
-                    <Calendar className="w-3.5 h-3.5 text-gold" />
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--color-border)', paddingTop: '0.85rem', marginTop: 'auto' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--color-grey-text)', fontSize: '0.75rem', fontFamily: 'var(--font-label)', fontWeight: 700 }}>
+                    <Calendar style={{ width: '0.85rem', height: '0.85rem', color: 'var(--color-gold-primary)' }} />
                     <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                   </div>
                   
-                  <Link to={`/blog/${post.slug}`} className="inline-flex items-center font-label text-xs uppercase tracking-widest text-gold group-hover:text-orange transition-colors font-bold">
+                  <Link to={`/blog/${post.slug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', fontFamily: 'var(--font-label)', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-gold-dark)' }}>
                     <span>Read More</span>
-                    <div className="ml-2 w-5 h-5 rounded-full bg-gold/5 group-hover:bg-gold/10 flex items-center justify-center transition-colors">
-                      <ChevronRight className="w-3.5 h-3.5 text-gold group-hover:translate-x-0.5 group-hover:text-orange transition-all" />
-                    </div>
+                    <ChevronRight style={{ width: '1rem', height: '1rem' }} />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <div className="mt-12 text-center md:hidden">
-            <Link to="/blog" className="inline-block font-label text-gold uppercase tracking-widest text-sm font-semibold border border-gold/30 px-8 py-3 rounded-full hover:bg-gold/5 transition-colors">
+          <div style={{ marginTop: '2rem', textAlign: 'center' }} className="md:hidden">
+            <Link to="/blog" className="pill-badge" style={{ padding: '0.65rem 1.5rem' }}>
               View All Articles
             </Link>
           </div>

@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 
 export default function SectionHeading({ title, subtitle, prefix, centered = false, light = false }) {
   return (
-    <div className={`mb-12 ${centered ? 'text-center flex flex-col items-center' : 'text-left'}`}>
+    <div style={{ marginBottom: '3rem', textAlign: centered ? 'center' : 'left', display: 'flex', flexDirection: 'column', alignItems: centered ? 'center' : 'flex-start' }}>
       {prefix && (
-        <motion.span
-          initial={{ opacity: 0, letterSpacing: '0.1em', y: -10 }}
-          whileInView={{ opacity: 0.8, letterSpacing: '0.35em', y: 0 }}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="font-label text-[10px] uppercase font-bold text-gold mb-4 tracking-[0.3em] block"
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: '1rem' }}
         >
-          — {prefix} —
-        </motion.span>
+          <span className="pill-badge">— {prefix} —</span>
+        </motion.div>
       )}
       
       <motion.h2 
@@ -21,7 +21,8 @@ export default function SectionHeading({ title, subtitle, prefix, centered = fal
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className={`font-heading font-bold text-4xl md:text-5xl mb-4 ${light ? 'text-white' : 'text-charcoal'}`}
+        className="text-section-title"
+        style={{ color: light ? 'var(--color-white)' : 'var(--color-charcoal)', marginBottom: '1rem', textTransform: 'uppercase' }}
       >
         {title}
       </motion.h2>
@@ -30,8 +31,15 @@ export default function SectionHeading({ title, subtitle, prefix, centered = fal
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-        className={`h-0.5 w-20 bg-gradient-to-r from-gold to-orange origin-left ${centered ? 'mx-auto' : ''}`}
+        transition={{ duration: 0.7, delay: 0.15 }}
+        style={{
+          height: '4px',
+          width: '5rem',
+          backgroundColor: 'var(--color-gold-primary)',
+          transformOrigin: 'left',
+          marginBottom: subtitle ? '1rem' : 0,
+          boxShadow: '2px 2px 0px var(--color-charcoal)'
+        }}
       ></motion.div>
       
       {subtitle && (
@@ -39,8 +47,14 @@ export default function SectionHeading({ title, subtitle, prefix, centered = fal
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className={`mt-6 font-body text-lg max-w-2xl ${light ? 'text-white/75' : 'text-grey-text'}`}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '1.15rem',
+            maxWidth: '42rem',
+            color: light ? 'rgba(255, 255, 255, 0.85)' : 'var(--color-grey-text)',
+            marginTop: '0.75rem'
+          }}
         >
           {subtitle}
         </motion.p>

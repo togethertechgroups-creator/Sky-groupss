@@ -1,12 +1,13 @@
 import React from 'react';
 import ServicePageLayout from '../../components/layout/ServicePageLayout';
 import propertyImg from '../../assets/property-to-buy-sell.jpg.jpeg';
+import heroPropertyImg from '../../assets/hero_property.png';
 
 export default function Property() {
   return (
     <ServicePageLayout
       serviceId="property"
-      heroImage="https://picsum.photos/1920/1080?random=40"
+      heroImage={heroPropertyImg}
       introImage={propertyImg}
       schema={{
         "@context": "https://schema.org",

@@ -1,13 +1,13 @@
 import React from 'react';
 import ServicePageLayout from '../../components/layout/ServicePageLayout';
 import bikesImg from '../../assets/bikes.jpg';
-import carsHeroImg from '../../assets/cars.jpg';
+import heroVehiclesImg from '../../assets/hero_vehicles.png';
 
 export default function Vehicles() {
   return (
     <ServicePageLayout
       serviceId="vehicles"
-      heroImage={carsHeroImg}
+      heroImage={heroVehiclesImg}
       introImage={bikesImg}
       schema={{
         "@context": "https://schema.org",

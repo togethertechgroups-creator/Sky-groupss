@@ -3,11 +3,10 @@ import { motion } from 'framer-motion';
 import SEOHead from '../components/seo/SEOHead';
 import HeroSection from '../components/ui/HeroSection';
 import BreadCrumb from '../components/ui/BreadCrumb';
-import SectionHeading from '../components/ui/SectionHeading';
 import ServiceCard from '../components/ui/ServiceCard';
 import CTABanner from '../components/ui/CTABanner';
 import { services } from '../data/services';
-import servicesHeroImg from '../assets/Gemini_Generated_Image_vslrdjvslrdjvslr.png';
+import servicesHeroImg from '../assets/hero_web_design.png';
 
 export default function Services() {
   return (
@@ -26,18 +25,19 @@ export default function Services() {
 
       <BreadCrumb crumbs={[{ label: 'Home', path: '/' }, { label: 'Services', path: '/services' }]} />
 
-      <section className="py-20 bg-off-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section style={{ padding: '3.5rem 0', backgroundColor: 'var(--color-off-white)' }} data-section-theme="cream">
+        <div className="container">
 
-          <div className="max-w-3xl mb-16">
-            <h2 className="font-display text-3xl font-bold text-charcoal mb-6">One Group, Many Solutions</h2>
-            <p className="font-body text-grey-text text-lg leading-relaxed">
+          <div style={{ maxWidth: '48rem', marginBottom: '2.5rem' }}>
+            <span className="pill-badge" style={{ marginBottom: '0.75rem' }}>— DIVERSIFIED SOLUTIONS —</span>
+            <h2 className="text-section-title" style={{ marginTop: '0.5rem', marginBottom: '1rem', textTransform: 'uppercase', color: 'var(--color-charcoal)' }}>One Group, Many Solutions</h2>
+            <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-grey-text)', fontSize: '1.08rem', lineHeight: 1.65 }}>
               SKY Groups was founded with a singular vision: to be the most reliable, diversified service provider in Tamil Nadu. We have meticulously curated our offerings to ensure that whether you are building a home, scaling a business, or hosting a monumental event, you have a trusted partner by your side.
             </p>
           </div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}

@@ -1,12 +1,13 @@
 import React from 'react';
 import ServicePageLayout from '../../components/layout/ServicePageLayout';
 import constructionImg from '../../assets/construction.avif';
+import heroCivilImg from '../../assets/hero_civil_construction.png';
 
 export default function CivilConstruction() {
   return (
     <ServicePageLayout
       serviceId="civil-construction"
-      heroImage="https://picsum.photos/1920/1080?random=41"
+      heroImage={heroCivilImg}
       introImage={constructionImg}
       schema={{
         "@context": "https://schema.org",

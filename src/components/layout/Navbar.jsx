@@ -23,59 +23,57 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Floating Logo Bubble (Left) - Now wraps in glass container when scrolled */}
-      <div className={`fixed ${isScrolled ? 'top-3 bg-glass border border-gold/25 shadow-lg px-4 py-1.5 rounded-full backdrop-blur-xl' : 'top-5 bg-transparent border-transparent'} left-4 md:left-8 z-50 transition-all duration-300 flex items-center`}>
-        <Link to="/" className="flex items-center gap-3 bg-transparent hover:scale-105 transition-transform duration-300 group">
+      {/* Floating Logo Bubble (Left) */}
+      <div className={`navbar-logo-container ${isScrolled ? 'navbar-logo-scrolled' : 'navbar-logo-unscrolled'}`}>
+        <Link to="/" className="navbar-logo-link">
           <img
             src={logoImg}
             alt="SKY Groups Logo"
-            className={`${isScrolled ? 'h-[40px] md:h-[52px]' : 'h-[52px] md:h-[64px]'} w-auto transition-all duration-300 group-hover:scale-110`}
+            className="navbar-logo-img"
+            style={{ height: isScrolled ? '34px' : '44px' }}
           />
           <div className="flex flex-col justify-center">
-            <span className={`font-display font-bold leading-none text-gold tracking-widest transition-all duration-300 ${isScrolled ? 'text-lg md:text-2xl' : 'text-xl md:text-2xl'}`}>
+            <span className="navbar-logo-text" style={{ fontSize: isScrolled ? '1.15rem' : '1.35rem' }}>
               SKY Groups
             </span>
           </div>
         </Link>
       </div>
 
-      {/* Floating Navigation Pill (Center) - High-end Glass capsule */}
-      <div className={`hidden md:flex fixed ${isScrolled ? 'top-3 bg-glass shadow-xl border-gold/25' : 'top-5 bg-glass/85 border-gold/15 shadow-md'} left-1/2 -translate-x-1/2 z-50 transition-all duration-300 items-center backdrop-blur-xl border px-6 py-2.5 rounded-full gap-6 hover:border-gold/45`}>
+      {/* Floating Navigation Pill (Center) */}
+      <div className={`navbar-pill ${isScrolled ? 'navbar-pill-scrolled' : 'navbar-pill-unscrolled'}`}>
         <Link
           to="/"
-          className={`font-label uppercase text-xs lg:text-sm tracking-widest hover:text-gold transition-colors duration-300 font-bold ${isActive('/') ? 'text-gold' : 'text-charcoal'
-            }`}
+          className={`navbar-link ${isActive('/') ? 'active' : ''}`}
         >
           Home
         </Link>
         <Link
           to="/about"
-          className={`font-label uppercase text-xs lg:text-sm tracking-widest hover:text-gold transition-colors duration-300 font-bold ${isActive('/about') ? 'text-gold' : 'text-charcoal'
-            }`}
+          className={`navbar-link ${isActive('/about') ? 'active' : ''}`}
         >
           About
         </Link>
 
         {/* Services Dropdown */}
         <div
-          className="relative group cursor-pointer"
+          className="navbar-dropdown-container"
           onMouseEnter={() => setIsServicesDropdownOpen(true)}
           onMouseLeave={() => setIsServicesDropdownOpen(false)}
         >
-          <div className={`flex items-center gap-1 font-label uppercase text-xs lg:text-sm tracking-widest hover:text-gold transition-colors duration-300 font-bold py-2 ${isServiceActive ? 'text-gold' : 'text-charcoal'
-            }`}>
+          <div className={`navbar-link navbar-dropdown-trigger ${isServiceActive ? 'active' : ''}`}>
             <Link to="/services">Services</Link>
-            <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180 text-gold/80" />
+            <ChevronDown style={{ width: '16px', height: '16px', color: 'var(--color-gold-primary)' }} />
           </div>
 
-          {/* Dropdown Menu - Glass list */}
+          {/* Dropdown Menu */}
           {isServicesDropdownOpen && (
-            <div className="absolute top-[120%] right-0 w-64 bg-glass backdrop-blur-xl shadow-2xl border border-gold/20 p-2.5 rounded-2xl animate-dropdown z-50">
+            <div className="navbar-dropdown-menu">
               {services.map((service) => (
                 <Link
                   key={service.id}
                   to={service.slug}
-                  className="block px-4 py-2.5 text-xs text-charcoal hover:bg-gold/10 hover:text-gold rounded-xl transition-all duration-300 font-bold uppercase tracking-wider"
+                  className="navbar-dropdown-item"
                 >
                   {service.name}
                 </Link>
@@ -86,16 +84,14 @@ export default function Navbar() {
 
         <Link
           to="/blog"
-          className={`font-label uppercase text-xs lg:text-sm tracking-widest hover:text-gold transition-colors duration-300 font-bold ${isActive('/blog') ? 'text-gold' : 'text-charcoal'
-            }`}
+          className={`navbar-link ${isActive('/blog') ? 'active' : ''}`}
         >
           Blog
         </Link>
 
         <Link
           to="/contact"
-          className={`font-label uppercase text-xs lg:text-sm tracking-widest hover:text-gold transition-colors duration-300 font-bold ${isActive('/contact') ? 'text-gold' : 'text-charcoal'
-            }`}
+          className={`navbar-link ${isActive('/contact') ? 'active' : ''}`}
         >
           Contact
         </Link>
@@ -103,62 +99,48 @@ export default function Navbar() {
         <StarBorder
           as={Link}
           to="/contact"
-          containerClassName="!rounded-full shadow-md"
-          className="!rounded-full px-5 py-1.5 text-xs uppercase tracking-widest font-bold"
+          className="navbar-link"
+          style={{ padding: '0.4rem 1.25rem', borderRadius: 'var(--radius-pill)', fontSize: '0.75rem' }}
         >
           Get a Quote
         </StarBorder>
       </div>
 
-      {/* Mobile Menu Toggle Bubble (Right) */}
-      <div className={`md:hidden fixed ${isScrolled ? 'top-3' : 'top-5'} right-4 z-50 transition-all duration-300`}>
+      {/* Mobile Menu Toggle Button (Right) */}
+      <div className="md:hidden" style={{ position: 'fixed', top: isScrolled ? '0.75rem' : '1.25rem', right: '1rem', zIndex: 50 }}>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="bg-glass border border-gold/25 p-3 rounded-full shadow-lg flex items-center justify-center text-charcoal hover:text-gold transition-colors"
+          className="mobile-toggle-btn"
           aria-label="Toggle mobile menu"
         >
-          {isMobileMenuOpen ? <X className="w-5 h-5 text-gold" /> : <Menu className="w-5 h-5" />}
+          {isMobileMenuOpen ? <X style={{ width: '20px', height: '20px', color: 'var(--color-gold-primary)' }} /> : <Menu style={{ width: '20px', height: '20px' }} />}
         </button>
       </div>
 
-      {/* Mobile Menu Dropdown Drawer Card - Custom Glass layout */}
+      {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed top-20 right-4 left-4 z-40 bg-glass/95 backdrop-blur-xl border border-gold/25 p-6 rounded-2xl shadow-2xl flex flex-col gap-4 animate-drawer max-h-[calc(100vh-7rem)] overflow-y-auto">
-          <Link
-            to="/"
-            className={`px-4 py-3 rounded-xl hover:bg-gold/10 hover:text-gold font-label uppercase text-xs tracking-widest font-bold transition-colors ${isActive('/') ? 'text-gold bg-gold/5' : 'text-charcoal'}`}
-          >
+        <div className="mobile-drawer">
+          <Link to="/" className={`mobile-nav-link ${isActive('/') ? 'active' : ''}`}>
             Home
           </Link>
-          <Link
-            to="/about"
-            className={`px-4 py-3 rounded-xl hover:bg-gold/10 hover:text-gold font-label uppercase text-xs tracking-widest font-bold transition-colors ${isActive('/about') ? 'text-gold bg-gold/5' : 'text-charcoal'}`}
-          >
+          <Link to="/about" className={`mobile-nav-link ${isActive('/about') ? 'active' : ''}`}>
             About
           </Link>
 
-          <div className="px-4 py-3 rounded-xl bg-gold/5 border border-gold/10">
+          <div style={{ padding: '0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-border)', backgroundColor: 'var(--color-off-white)' }}>
             <div
-              className="flex justify-between items-center text-charcoal hover:text-gold font-label uppercase text-xs tracking-widest font-bold cursor-pointer"
+              className="flex justify-between items-center cursor-pointer"
+              style={{ fontFamily: 'var(--font-label)', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase' }}
               onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
             >
               <span className={isServiceActive ? 'text-gold' : ''}>Services</span>
-              <ChevronDown className={`w-4 h-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown style={{ width: '16px', height: '16px', transform: isServicesDropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
             </div>
             {isServicesDropdownOpen && (
-              <div className="mt-3 flex flex-col gap-2 pl-4 border-l-2 border-gold/20">
-                <Link
-                  to="/services"
-                  className="py-2 text-charcoal hover:text-gold text-xs font-label uppercase tracking-widest font-bold"
-                >
-                  All Services
-                </Link>
+              <div className="flex flex-col gap-2" style={{ marginTop: '0.75rem', paddingLeft: '1rem', borderLeft: '2px solid var(--color-gold-primary)' }}>
+                <Link to="/services" className="mobile-nav-link">All Services</Link>
                 {services.map((service) => (
-                  <Link
-                    key={service.id}
-                    to={service.slug}
-                    className="py-2 text-grey-text hover:text-gold text-xs font-bold uppercase tracking-wider transition-colors"
-                  >
+                  <Link key={service.id} to={service.slug} className="mobile-nav-link" style={{ fontSize: '0.75rem' }}>
                     {service.name}
                   </Link>
                 ))}
@@ -166,25 +148,18 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link
-            to="/blog"
-            className={`px-4 py-3 rounded-xl hover:bg-gold/10 hover:text-gold font-label uppercase text-xs tracking-widest font-bold transition-colors ${isActive('/blog') ? 'text-gold bg-gold/5' : 'text-charcoal'}`}
-          >
+          <Link to="/blog" className={`mobile-nav-link ${isActive('/blog') ? 'active' : ''}`}>
             Blog
           </Link>
-          <Link
-            to="/contact"
-            className={`px-4 py-3 rounded-xl hover:bg-gold/10 hover:text-gold font-label uppercase text-xs tracking-widest font-bold transition-colors ${isActive('/contact') ? 'text-gold bg-gold/5' : 'text-charcoal'}`}
-          >
+          <Link to="/contact" className={`mobile-nav-link ${isActive('/contact') ? 'active' : ''}`}>
             Contact
           </Link>
 
-          <div className="pt-2">
+          <div style={{ paddingTop: '0.5rem' }}>
             <StarBorder
               as={Link}
               to="/contact"
-              containerClassName="w-full !rounded-full shadow-lg"
-              className="font-label py-3 text-xs uppercase tracking-widest font-bold !rounded-full transition-colors"
+              style={{ width: '100%', textAlign: 'center', padding: '0.75rem', borderRadius: 'var(--radius-pill)' }}
             >
               Get a Quote
             </StarBorder>

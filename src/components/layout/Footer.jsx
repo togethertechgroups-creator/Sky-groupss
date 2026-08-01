@@ -9,43 +9,39 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal text-white relative pt-16 border-t-2 border-gold overflow-hidden">
-      {/* Decorative background element */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none diagonal-cut-top bg-gold mt-10 h-full"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="footer-wrapper" data-section-theme="dark">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12" style={{ marginBottom: '3rem' }}>
 
           {/* Brand Column */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center group gap-3">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <img
                 src={logoImg}
                 alt="SKY Groups Logo"
-                className="h-[50px] md:h-[60px] w-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                style={{ height: '52px', width: 'auto' }}
               />
-              <div className="flex flex-col justify-center">
-                <span className="font-display text-2xl md:text-3xl font-bold leading-none text-gold tracking-wider group-hover:text-white transition-colors duration-300">
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 800, color: 'var(--color-gold-primary)', letterSpacing: '0.05em' }}>
                   SKY Groups
                 </span>
               </div>
             </Link>
-            <p className="text-white/70 font-body text-sm leading-relaxed">
+            <p style={{ color: 'rgba(255, 255, 255, 0.75)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.6 }}>
               Multiple Solutions, One Trusted Group. Delivering exceptional quality across real estate, civil works, vehicles, branding, events, and digital.
             </p>
           </div>
 
           {/* Services Column */}
           <div>
-            <h3 className="font-display text-xl font-bold mb-6 text-white border-b border-white/10 pb-2 inline-block">Our Services</h3>
-            <ul className="space-y-3">
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 800, marginBottom: '1.5rem', color: 'var(--color-white)', borderBottom: '2px solid var(--color-gold-primary)', paddingBottom: '0.35rem', display: 'inline-block' }}>Our Services</h3>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {services.map((service) => (
                 <li key={service.id}>
                   <Link
                     to={service.slug}
-                    className="text-white/70 hover:text-gold transition-colors font-body text-sm flex items-center group cursor-pointer"
+                    style={{ color: 'rgba(255, 255, 255, 0.75)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', transition: 'color 0.2s', display: 'flex', alignItems: 'center' }}
                   >
-                    <ArrowRight className="w-3 h-3 mr-2 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all text-gold" />
                     {service.name}
                   </Link>
                 </li>
@@ -55,55 +51,55 @@ export default function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="font-display text-xl font-bold mb-6 text-white border-b border-white/10 pb-2 inline-block">Quick Links</h3>
-            <ul className="space-y-3">
-              <li><Link to="/" className="text-white/70 hover:text-gold transition-colors font-body text-sm">Home</Link></li>
-              <li><Link to="/about" className="text-white/70 hover:text-gold transition-colors font-body text-sm">About Us</Link></li>
-              <li><Link to="/blog" className="text-white/70 hover:text-gold transition-colors font-body text-sm">Blog & Insights</Link></li>
-              <li><Link to="/contact" className="text-white/70 hover:text-gold transition-colors font-body text-sm">Contact Us</Link></li>
-              <li><Link to="/services" className="text-white/70 hover:text-gold transition-colors font-body text-sm">All Services</Link></li>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 800, marginBottom: '1.5rem', color: 'var(--color-white)', borderBottom: '2px solid var(--color-gold-primary)', paddingBottom: '0.35rem', display: 'inline-block' }}>Quick Links</h3>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <li><Link to="/" style={{ color: 'rgba(255, 255, 255, 0.75)', fontFamily: 'var(--font-body)', fontSize: '0.9rem' }}>Home</Link></li>
+              <li><Link to="/about" style={{ color: 'rgba(255, 255, 255, 0.75)', fontFamily: 'var(--font-body)', fontSize: '0.9rem' }}>About Us</Link></li>
+              <li><Link to="/blog" style={{ color: 'rgba(255, 255, 255, 0.75)', fontFamily: 'var(--font-body)', fontSize: '0.9rem' }}>Blog & Insights</Link></li>
+              <li><Link to="/contact" style={{ color: 'rgba(255, 255, 255, 0.75)', fontFamily: 'var(--font-body)', fontSize: '0.9rem' }}>Contact Us</Link></li>
+              <li><Link to="/services" style={{ color: 'rgba(255, 255, 255, 0.75)', fontFamily: 'var(--font-body)', fontSize: '0.9rem' }}>All Services</Link></li>
             </ul>
           </div>
 
           {/* Contact Column */}
           <div>
-            <h3 className="font-display text-xl font-bold mb-6 text-white border-b border-white/10 pb-2 inline-block">Get In Touch</h3>
-            <ul className="space-y-4">
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 800, marginBottom: '1.5rem', color: 'var(--color-white)', borderBottom: '2px solid var(--color-gold-primary)', paddingBottom: '0.35rem', display: 'inline-block' }}>Get In Touch</h3>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <li>
-                <a href={SOCIAL_LINKS.phone} className="flex items-start text-white/70 hover:text-gold transition-colors cursor-pointer">
-                  <Phone className="w-5 h-5 mr-3 mt-0.5 text-gold shrink-0" />
-                  <span className="font-body text-sm">+91 99418 88840</span>
+                <a href={SOCIAL_LINKS.phone} style={{ display: 'flex', alignItems: 'flex-start', color: 'rgba(255, 255, 255, 0.75)' }}>
+                  <Phone style={{ width: '1.25rem', height: '1.25rem', marginRight: '0.75rem', marginTop: '0.15rem', color: 'var(--color-gold-primary)', flexShrink: 0 }} />
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem' }}>+91 99418 88840</span>
                 </a>
               </li>
               <li>
-                <a href={SOCIAL_LINKS.email} className="flex items-start text-white/70 hover:text-gold transition-colors cursor-pointer">
-                  <Mail className="w-5 h-5 mr-3 mt-0.5 text-gold shrink-0" />
-                  <span className="font-body text-sm break-all">ponskygroups@gmail.com</span>
+                <a href={SOCIAL_LINKS.email} style={{ display: 'flex', alignItems: 'flex-start', color: 'rgba(255, 255, 255, 0.75)' }}>
+                  <Mail style={{ width: '1.25rem', height: '1.25rem', marginRight: '0.75rem', marginTop: '0.15rem', color: 'var(--color-gold-primary)', flexShrink: 0 }} />
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', wordBreak: 'break-all' }}>ponskygroups@gmail.com</span>
                 </a>
               </li>
               <li>
-                <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-start text-white/70 hover:text-gold transition-colors cursor-pointer">
-                  <MessageCircle className="w-5 h-5 mr-3 mt-0.5 text-gold shrink-0" />
-                  <span className="font-body text-sm">Chat on WhatsApp</span>
+                <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'flex-start', color: 'rgba(255, 255, 255, 0.75)' }}>
+                  <MessageCircle style={{ width: '1.25rem', height: '1.25rem', marginRight: '0.75rem', marginTop: '0.15rem', color: 'var(--color-gold-primary)', flexShrink: 0 }} />
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem' }}>Chat on WhatsApp</span>
                 </a>
               </li>
-              <li className="flex items-start text-white/70">
-                <MapPin className="w-5 h-5 mr-3 mt-0.5 text-gold shrink-0" />
-                <span className="font-body text-sm"> Tamil Nadu, India</span>
+              <li style={{ display: 'flex', alignItems: 'flex-start', color: 'rgba(255, 255, 255, 0.75)' }}>
+                <MapPin style={{ width: '1.25rem', height: '1.25rem', marginRight: '0.75rem', marginTop: '0.15rem', color: 'var(--color-gold-primary)', flexShrink: 0 }} />
+                <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem' }}> Tamil Nadu, India</span>
               </li>
             </ul>
-            <div className="flex gap-4 mt-6">
-              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all text-white/70 hover:text-white" aria-label="Facebook">
-                <Facebook className="w-4 h-4" />
+            <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>
+              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" style={{ width: '2rem', height: '2rem', borderRadius: '50%', border: '1px solid var(--color-gold-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-white)' }} aria-label="Facebook">
+                <Facebook style={{ width: '1rem', height: '1rem' }} />
               </a>
-              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all text-white/70 hover:text-white" aria-label="Instagram">
-                <Instagram className="w-4 h-4" />
+              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" style={{ width: '2rem', height: '2rem', borderRadius: '50%', border: '1px solid var(--color-gold-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-white)' }} aria-label="Instagram">
+                <Instagram style={{ width: '1rem', height: '1rem' }} />
               </a>
-              <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all text-white/70 hover:text-white" aria-label="YouTube">
-                <Youtube className="w-4 h-4" />
+              <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" style={{ width: '2rem', height: '2rem', borderRadius: '50%', border: '1px solid var(--color-gold-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-white)' }} aria-label="YouTube">
+                <Youtube style={{ width: '1rem', height: '1rem' }} />
               </a>
-              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold transition-all text-white/70 hover:text-white" aria-label="LinkedIn">
-                <Linkedin className="w-4 h-4" />
+              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" style={{ width: '2rem', height: '2rem', borderRadius: '50%', border: '1px solid var(--color-gold-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-white)' }} aria-label="LinkedIn">
+                <Linkedin style={{ width: '1rem', height: '1rem' }} />
               </a>
             </div>
           </div>
@@ -111,13 +107,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 py-6 text-center md:flex md:justify-between md:text-left">
-          <p className="text-white/50 font-body text-xs">
+        <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', padding: '1.5rem 0', textAlign: 'center', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center' }}>
+          <p style={{ color: 'rgba(255, 255, 255, 0.5)', fontFamily: 'var(--font-body)', fontSize: '0.8rem' }}>
             &copy; {currentYear} SKY Groups. All rights reserved. Managed by S.S. Ponnarasan.
           </p>
-          <div className="mt-4 md:mt-0 space-x-4">
-            <span className="text-white/50 hover:text-gold text-xs font-body cursor-pointer">Privacy Policy</span>
-            <span className="text-white/50 hover:text-gold text-xs font-body cursor-pointer">Terms of Service</span>
+          <div style={{ display: 'flex', gap: '1rem' }}>
+            <span style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '0.8rem', fontFamily: 'var(--font-body)' }}>Privacy Policy</span>
+            <span style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '0.8rem', fontFamily: 'var(--font-body)' }}>Terms of Service</span>
           </div>
         </div>
       </div>

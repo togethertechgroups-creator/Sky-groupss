@@ -5,12 +5,21 @@ export default function AnimatedCounter({ target, suffix = '', label }) {
   const { count, nodeRef } = useAnimatedCounter(parseInt(target, 10), 2000);
 
   return (
-    <div ref={nodeRef} className="flex flex-col items-center">
-      <span className="font-label font-extrabold text-3xl sm:text-4xl md:text-6xl text-charcoal mb-1 sm:mb-2 block tracking-tight">
+    <div ref={nodeRef} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+      <span 
+        style={{
+          fontFamily: 'var(--font-display)',
+          fontWeight: 800,
+          fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+          color: 'var(--color-charcoal)',
+          lineHeight: 1,
+          marginBottom: '0.5rem'
+        }}
+      >
         {count}{suffix}
       </span>
       {label && (
-        <span className="font-label uppercase tracking-[0.1em] sm:tracking-[0.2em] text-[8px] sm:text-[10px] md:text-xs text-charcoal/80 font-bold bg-charcoal/5 px-2 sm:px-3.5 py-0.5 sm:py-1 rounded-full text-center block max-w-full">
+        <span className="pill-badge" style={{ fontSize: '0.7rem' }}>
           {label}
         </span>
       )}

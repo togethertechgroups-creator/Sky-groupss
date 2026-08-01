@@ -9,10 +9,8 @@ import postsData from '../data/blog-posts.json';
 export default function BlogPost() {
   const { slug } = useParams();
 
-  // Find post
   const post = postsData.find(p => p.slug === slug);
 
-  // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -53,28 +51,26 @@ export default function BlogPost() {
       />
 
       {/* Article Hero */}
-      <section className="bg-charcoal pt-32 pb-16 px-4">
-        <div className="max-w-4xl mx-auto text-center animate-in fade-in slide-in-from-bottom-8 duration-700">
-          <span className="inline-block bg-gold text-white font-label text-xs uppercase tracking-widest px-4 py-1.5 rounded-sm mb-6">
+      <section style={{ backgroundColor: 'var(--color-charcoal)', paddingTop: '8rem', paddingBottom: '4rem', paddingLeft: '1rem', paddingRight: '1rem', color: 'var(--color-white)' }} data-section-theme="dark">
+        <div style={{ maxWidth: '56rem', margin: '0 auto', textAlign: 'center' }}>
+          <span className="pill-badge" style={{ marginBottom: '1.5rem' }}>
             {post.category}
           </span>
-          <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-8 border-b border-white/10 pb-8 leading-tight">
+          <h1 className="text-hero" style={{ color: 'var(--color-white)', marginBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem', textTransform: 'uppercase' }}>
             {post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 text-white/70 font-body text-sm md:text-base">
-            <div className="flex items-center gap-2">
-              <User className="w-4 h-4 text-gold" />
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', color: 'rgba(255,255,255,0.8)', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <User style={{ width: '1rem', height: '1rem', color: 'var(--color-gold-primary)' }} />
               <span>{post.author}</span>
             </div>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-border"></div>
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-gold" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Calendar style={{ width: '1rem', height: '1rem', color: 'var(--color-gold-primary)' }} />
               <span>{formattedDate}</span>
             </div>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-border"></div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-gold" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Clock style={{ width: '1rem', height: '1rem', color: 'var(--color-gold-primary)' }} />
               <span>{post.readTime}</span>
             </div>
           </div>
@@ -89,42 +85,37 @@ export default function BlogPost() {
         ]}
       />
 
-      <section className="py-16 bg-off-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section style={{ padding: '4rem 0', backgroundColor: 'var(--color-off-white)' }} data-section-theme="cream">
+        <div style={{ maxWidth: '56rem', margin: '0 auto', padding: '0 1.5rem' }}>
 
           {/* Article Body */}
-          <div className="bg-white p-5 sm:p-8 md:p-12 rounded-sm shadow-xl border border-border">
-            {/* 
-              Global styles for HTML content generated via string 
-              We use standard tailwind typography via a wrapper class 
-            */}
+          <div className="card-brutal" style={{ padding: '2.5rem' }}>
             <main
-              className="prose prose-lg max-w-none 
-                prose-headings:font-heading prose-headings:font-bold prose-headings:text-charcoal 
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:border-b prose-h2:border-border prose-h2:pb-2
-                prose-h3:text-2xl prose-h3:text-gold prose-h3:mt-8 prose-h3:mb-4
-                prose-p:font-body prose-p:text-grey-text prose-p:leading-[1.8] prose-p:mb-6
-                prose-a:text-gold prose-a:no-underline hover:prose-a:text-orange hover:prose-a:underline
-                prose-ul:list-disc prose-ul:font-body prose-ul:text-grey-text prose-ul:pl-5
-                prose-li:mb-2 marker:text-gold"
+              style={{
+                fontFamily: 'var(--font-body)',
+                color: 'var(--color-grey-text)',
+                fontSize: '1.1rem',
+                lineHeight: 1.8
+              }}
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center mt-12 pt-8 border-t border-border gap-6">
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid var(--color-border)', gap: '1.5rem' }}>
             <Link
               to="/blog"
-              className="font-label uppercase text-sm tracking-wider text-charcoal hover:text-gold transition-colors font-semibold"
+              className="pill-badge"
             >
               ← Back to all articles
             </Link>
 
-            <div className="flex gap-4">
+            <div style={{ display: 'flex', gap: '1rem' }}>
               <button
                 onClick={handleCopyLink}
-                className="flex items-center gap-2 px-6 py-2 bg-white border border-border text-charcoal font-label text-xs uppercase tracking-widest rounded-sm hover:border-gold hover:text-gold transition-colors"
+                className="pill-badge"
+                style={{ cursor: 'pointer' }}
               >
-                <Share2 className="w-4 h-4" />
+                <Share2 style={{ width: '1rem', height: '1rem' }} />
                 Copy Link
               </button>
 
@@ -132,7 +123,8 @@ export default function BlogPost() {
                 href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${post.title} - ${window.location.href}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-2 bg-[#25D366] text-white font-label text-xs uppercase tracking-widest rounded-sm hover:bg-[#128C7E] transition-colors"
+                className="pill-badge"
+                style={{ backgroundColor: '#25D366', borderColor: '#25D366', color: '#ffffff' }}
               >
                 Share on WhatsApp
               </a>
@@ -141,17 +133,15 @@ export default function BlogPost() {
 
           {/* Related Service CTA */}
           {post.relatedService && (
-            <div className="mt-16 bg-charcoal text-white p-10 rounded-sm text-center relative overflow-hidden border-t-4 border-gold">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-2xl"></div>
-              <h3 className="relative z-10 font-heading font-bold text-2xl md:text-3xl mb-4">Ready to take action?</h3>
-              <p className="relative z-10 font-body text-white/70 mb-8 max-w-xl mx-auto">
+            <div className="card-brutal-gold" style={{ marginTop: '4rem', padding: '2.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.75rem', color: 'var(--color-gold-light)', marginBottom: '1rem', textTransform: 'uppercase' }}>Ready to take action?</h3>
+              <p style={{ fontFamily: 'var(--font-body)', color: 'rgba(255,255,255,0.85)', marginBottom: '2rem', maxWidth: '36rem', margin: '0 auto 2rem auto' }}>
                 SKY Groups offers professional assistance tailored exactly to this topic. Discover how we can help you achieve your goals safely and efficiently.
               </p>
               <StarBorder
                 as={Link}
                 to={post.relatedService}
-                containerClassName="relative z-10 shadow-lg"
-                className="font-label px-8 py-4 uppercase tracking-wider text-sm transition-colors"
+                style={{ padding: '0.85rem 2rem' }}
               >
                 Explore Related Service
               </StarBorder>

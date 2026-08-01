@@ -4,24 +4,24 @@ import { ChevronRight } from 'lucide-react';
 
 export default function BreadCrumb({ crumbs }) {
   return (
-    <nav className="flex px-4 py-4 md:px-8 text-sm font-label uppercase tracking-wider text-grey-text max-w-7xl mx-auto w-full">
-      <ol className="flex flex-wrap items-center gap-y-1.5 gap-x-1 sm:gap-x-2">
+    <nav style={{ padding: '1rem 1.5rem', fontFamily: 'var(--font-label)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-grey-text)', maxWidth: '1280px', margin: '0 auto', width: '100%' }}>
+      <ol style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', listStyle: 'none' }}>
         {crumbs.map((crumb, index) => {
           const isLast = index === crumbs.length - 1;
           
           return (
-            <li key={index} className="inline-flex items-center">
+            <li key={index} style={{ display: 'inline-flex', alignItems: 'center' }}>
               {isLast ? (
-                <span className="text-gold font-bold">{crumb.label}</span>
+                <span style={{ color: 'var(--color-gold-primary)', fontWeight: 700 }}>{crumb.label}</span>
               ) : (
                 <>
                   <Link 
                     to={crumb.path} 
-                    className="inline-flex items-center hover:text-gold transition-colors"
+                    style={{ display: 'inline-flex', alignItems: 'center', color: 'var(--color-charcoal)', fontWeight: 700, transition: 'color 0.2s' }}
                   >
                     {crumb.label}
                   </Link>
-                  <ChevronRight className="w-4 h-4 mx-1 sm:mx-1.5 text-border" />
+                  <ChevronRight style={{ width: '1rem', height: '1rem', margin: '0 0.25rem', color: 'var(--color-gold-primary)' }} />
                 </>
               )}
             </li>
